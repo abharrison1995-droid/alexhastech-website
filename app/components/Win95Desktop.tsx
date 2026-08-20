@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from "react";
 import type { Project } from "../data/projects";
 
 type WindowId = "projects-completed" | "projects-in-progress" | "get-to-know";
@@ -74,6 +74,10 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const pendingOpen = useRef<WindowId | null>(null);
   const closing = useRef(new Set<WindowId>());
+  // Drag offsets are session-only (never persisted) and applied imperatively via
+  // --drag-x/--drag-y so dragging doesn't re-render on every pointer move.
+  const dragOffsets = useRef<Partial<Record<WindowId, { x: number; y: number }>>>({});
+  const dragState = useRef<{ id: WindowId; pointerId: number; startX: number; startY: number; startRect: DOMRect; baseX: number; baseY: number } | null>(null);
 
   // Point the zoom keyframes at the taskbar button that launched the window, so
   // it appears to burst out of the bar the way a Win95 window does.
@@ -132,7 +136,11 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
     if (closing.current.has(id)) return;
     const finish = () => {
       closing.current.delete(id);
-      if (element) delete element.dataset.anim;
+      // Leave data-anim="closing" in place: React's hidden={true} (below) is what
+      // actually removes the window from view. Clearing the attribute here would
+      // strip the animation's held end-state a tick before that re-render lands,
+      // snapping the window back to full size/centred for one visible frame.
+      // toggleWindow already clears it fresh right before the next open.
       setOpen((current) => current.filter((entry) => entry !== id));
       setMaximized((current) => current.filter((entry) => entry !== id));
       if (returnFocus) buttonRefs.current[id]?.focus();
@@ -154,6 +162,62 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
 
   function raiseWindow(id: WindowId) {
     setOpen((current) => (current.at(-1) === id ? current : [...current.filter((entry) => entry !== id), id]));
+  }
+
+  // Maximised windows fill the viewport via top/width/height; a leftover drag
+  // translate would offset that layout, so dragging always resets to (0, 0).
+  function resetDrag(id: WindowId) {
+    dragOffsets.current[id] = { x: 0, y: 0 };
+    const element = windowRefs.current[id];
+    element?.style.setProperty("--drag-x", "0px");
+    element?.style.setProperty("--drag-y", "0px");
+  }
+
+  const beginDrag = useCallback((event: ReactPointerEvent<HTMLDivElement>, id: WindowId) => {
+    if (event.button !== 0) return;
+    if ((event.target as HTMLElement).closest(".window-buttons")) return;
+    if (maximized.includes(id)) return;
+    if (!window.matchMedia("(pointer: fine)").matches) return; // preserve touch scrolling
+    const element = windowRefs.current[id];
+    if (!element) return;
+    raiseWindow(id);
+    const offset = dragOffsets.current[id] ?? { x: 0, y: 0 };
+    dragState.current = {
+      id,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      startRect: element.getBoundingClientRect(),
+      baseX: offset.x,
+      baseY: offset.y,
+    };
+    event.currentTarget.setPointerCapture(event.pointerId);
+    event.preventDefault();
+  }, [maximized]);
+
+  function onDragMove(event: ReactPointerEvent<HTMLDivElement>) {
+    const drag = dragState.current;
+    if (!drag || drag.pointerId !== event.pointerId) return;
+    const element = windowRefs.current[drag.id];
+    if (!element) return;
+    const taskbarHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--taskbar-height")) || 0;
+    const dx = event.clientX - drag.startX;
+    const dy = event.clientY - drag.startY;
+    const minLeft = 0;
+    const maxLeft = Math.max(minLeft, window.innerWidth - drag.startRect.width);
+    const minTop = taskbarHeight;
+    const maxTop = Math.max(minTop, window.innerHeight - drag.startRect.height);
+    const clampedLeft = Math.min(Math.max(drag.startRect.left + dx, minLeft), maxLeft);
+    const clampedTop = Math.min(Math.max(drag.startRect.top + dy, minTop), maxTop);
+    const x = drag.baseX + (clampedLeft - drag.startRect.left);
+    const y = drag.baseY + (clampedTop - drag.startRect.top);
+    dragOffsets.current[drag.id] = { x, y };
+    element.style.setProperty("--drag-x", `${x}px`);
+    element.style.setProperty("--drag-y", `${y}px`);
+  }
+
+  function endDrag(event: ReactPointerEvent<HTMLDivElement>) {
+    if (dragState.current?.pointerId === event.pointerId) dragState.current = null;
   }
 
   useEffect(() => {
@@ -211,7 +275,13 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
               data-maximized={isMaximized}
               onPointerDown={() => raiseWindow(spec.id)}
             >
-              <div className="window-titlebar">
+              <div
+                className="window-titlebar"
+                onPointerDown={(event) => beginDrag(event, spec.id)}
+                onPointerMove={onDragMove}
+                onPointerUp={endDrag}
+                onPointerCancel={endDrag}
+              >
                 <span className="window-title">{spec.title}</span>
                 <span className="window-buttons">
                   <button className="bevel-out" type="button" aria-label={`Minimise ${spec.title}`} onClick={() => closeWindow(spec.id)}>_</button>
@@ -220,7 +290,10 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
                     type="button"
                     aria-pressed={isMaximized}
                     aria-label={`${isMaximized ? "Restore" : "Maximise"} ${spec.title}`}
-                    onClick={() => setMaximized((current) => (current.includes(spec.id) ? current.filter((entry) => entry !== spec.id) : [...current, spec.id]))}
+                    onClick={() => {
+                      if (!isMaximized) resetDrag(spec.id);
+                      setMaximized((current) => (current.includes(spec.id) ? current.filter((entry) => entry !== spec.id) : [...current, spec.id]));
+                    }}
                   >
                     <span aria-hidden="true">{isMaximized ? "❐" : "□"}</span>
                   </button>

@@ -36,11 +36,13 @@ h1, h2, h3, p { margin-top: 0; }
 /* Windows */
 /* --window-top is measured from the bottom of the title by Win95Desktop, so
    windows always come to rest underneath the alex_has_tech wordmark. */
-.win95-window { position: fixed; z-index: 10; top: calc(var(--window-top, 220px) + var(--cascade) * var(--cascade-step, 26px)); right: 0; left: 0; display: flex; flex-direction: column; width: min(1120px, calc(100% - 32px)); max-height: calc(100vh - var(--window-top, 220px) - var(--cascade) * var(--cascade-step, 26px) - 24px); margin-inline: auto; padding: 3px; background: var(--surface); color: var(--ink); box-shadow: inset 1px 1px 0 var(--highlight), inset -1px -1px 0 var(--shadow), 4px 4px 0 #00000055; transform-origin: 50% 50%; }
+.win95-window { position: fixed; z-index: 10; top: calc(var(--window-top, 220px) + var(--cascade) * var(--cascade-step, 26px)); right: 0; left: 0; display: flex; flex-direction: column; width: min(1120px, calc(100% - 32px)); max-height: calc(100vh - var(--window-top, 220px) - var(--cascade) * var(--cascade-step, 26px) - 24px); margin-inline: auto; padding: 3px; background: var(--surface); color: var(--ink); box-shadow: inset 1px 1px 0 var(--highlight), inset -1px -1px 0 var(--shadow), 4px 4px 0 #00000055; transform: translate(var(--drag-x, 0px), var(--drag-y, 0px)); transform-origin: 50% 50%; }
 .win95-window[hidden] { display: none; }
 .win95-window[data-maximized="true"] { top: var(--taskbar-height); width: 100%; height: calc(100vh - var(--taskbar-height)); max-height: none; }
 .win95-window:focus { outline: none; }
-.window-titlebar { display: flex; flex: none; align-items: center; gap: 8px; height: 24px; padding: 0 2px 0 6px; background: linear-gradient(90deg, var(--caption-active), var(--caption-fade)); color: #fff; font: 700 12px/1 var(--ui-font); }
+.window-titlebar { display: flex; flex: none; align-items: center; gap: 8px; height: 24px; padding: 0 2px 0 6px; background: linear-gradient(90deg, var(--caption-active), var(--caption-fade)); color: #fff; font: 700 12px/1 var(--ui-font); cursor: grab; }
+.win95-window[data-maximized="true"] .window-titlebar { cursor: default; }
+.window-titlebar:active { cursor: grabbing; }
 .win95-window[data-active="false"] .window-titlebar { background: linear-gradient(90deg, var(--caption-inactive), var(--caption-fade-inactive)); }
 .window-title { flex: 1; min-width: 0; overflow: hidden; letter-spacing: .02em; text-overflow: ellipsis; white-space: nowrap; }
 .window-buttons { display: flex; flex: none; gap: 2px; }
@@ -53,8 +55,12 @@ h1, h2, h3, p { margin-top: 0; }
 .window-status span:first-child { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* Win95 "zoom" open: the window jumps out of its taskbar button in coarse steps. */
-@keyframes win95-zoom-open { from { transform: translate(var(--zx, 0), var(--zy, 0)) scale(var(--sx, .2), var(--sy, .05)); } to { transform: none; } }
-@keyframes win95-zoom-close { from { transform: none; } to { transform: translate(var(--zx, 0), var(--zy, 0)) scale(var(--sx, .2), var(--sy, .05)); } }
+/* "opening" is never explicitly cleared after it finishes (only the next open
+   does that), so its held to-state stays in effect for as long as the window
+   is open — it must track --drag-x/--drag-y live rather than resting at
+   `none`, or a drag would have no visible effect until the window is reopened. */
+@keyframes win95-zoom-open { from { transform: translate(var(--zx, 0), var(--zy, 0)) scale(var(--sx, .2), var(--sy, .05)); } to { transform: translate(var(--drag-x, 0px), var(--drag-y, 0px)); } }
+@keyframes win95-zoom-close { from { transform: translate(var(--drag-x, 0px), var(--drag-y, 0px)); } to { transform: translate(var(--zx, 0), var(--zy, 0)) scale(var(--sx, .2), var(--sy, .05)); } }
 .win95-window[data-anim="opening"] { animation: win95-zoom-open 180ms steps(6, end) both; }
 /* Closing runs continuously: stepping a full-size window down to a taskbar
    button is a much bigger jump per frame than the reverse, and it reads as a
