@@ -31,3 +31,7 @@ npm test
 Project records live in `app/data/projects.ts`. An ordinary project needs only its content record. A project intended for the wide desktop arrangement also needs an explicit `desktop` layout entry; this prevents an added card from silently entering an invalid draggable composition.
 
 Desktop dragging is enabled only at wide fine-pointer viewports. It is title-bar-only, bounded, collision-safe, stored locally when available, and resettable. Keyboard navigation uses the normal project links; window arrangement is decorative.
+
+## Deployment
+
+Pushes to `main` deploy automatically via Cloudflare Workers Builds (build command `npm run build`, deploy command `npx wrangler deploy --config dist/server/wrangler.json`). Live at `alexhastech-website.alexhastech.workers.dev` until the custom domain is connected.
