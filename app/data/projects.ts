@@ -12,7 +12,6 @@ export type Project = {
   summary: string;
   featured: boolean;
   accent: "teal" | "navy" | "gold";
-  desktop?: { x: number; y: number; width: "large" | "medium" };
   detail: string;
   safety: readonly string[];
   hero?: ProjectImage;
@@ -27,7 +26,6 @@ export const projects: readonly Project[] = [
     summary: "A mobile role-playing game set in England, currently in development.",
     featured: true,
     accent: "gold",
-    desktop: { x: 270, y: 52, width: "large" },
     detail: "Additional public material will be added when it is available.",
     safety: [],
     hero: { src: "/projects/gbh-england/01.png", alt: "GBH England — title or menu screen" },
@@ -45,7 +43,6 @@ export const projects: readonly Project[] = [
     summary: "A revision application suite for CompTIA A+ study.",
     featured: false,
     accent: "teal",
-    desktop: { x: 32, y: 350, width: "medium" },
     detail: "This project is listed as released.",
     safety: [],
     hero: { src: "/projects/comptia-revision-suite/01.png", alt: "CompTIA A+ revision suite — main screen" },
@@ -61,8 +58,11 @@ export const projects: readonly Project[] = [
     summary: "A utility for Libreboot/Coreboot ThinkPad modification workflows.",
     featured: false,
     accent: "navy",
-    desktop: { x: 660, y: 350, width: "medium" },
     detail: "No download is provided from this portfolio.",
+    hero: { src: "/projects/thinkpad-mod-loader/01.jpg", alt: "Libreboot/Coreboot ThinkPad mod-loader utility — main screen" },
+    gallery: [
+      { src: "/projects/thinkpad-mod-loader/02.jpg", alt: "Libreboot/Coreboot ThinkPad mod-loader utility — secondary screen" },
+    ],
     safety: ["Supported ThinkPad models, prerequisites, testing status, backup and recovery procedures, and checksums have not yet been published here.", "Do not treat this page as compatibility or installation guidance."],
   },
 ] as const;
@@ -78,11 +78,6 @@ export function assertProjectRegistry(records: readonly Project[]) {
     if (project.hero && (!project.hero.src.trim() || !project.hero.alt.trim())) throw new Error(`Invalid hero image: ${project.slug}`);
     if (project.gallery && (project.gallery.length === 0 || project.gallery.some((image) => !image.src.trim() || !image.alt.trim()))) throw new Error(`Invalid gallery images: ${project.slug}`);
     if (project.featured) featured += 1;
-    if (project.desktop && (
-      !Number.isFinite(project.desktop.x) || !Number.isFinite(project.desktop.y) ||
-      project.desktop.x < 0 || project.desktop.y < 0 ||
-      !["large", "medium"].includes(project.desktop.width)
-    )) throw new Error(`Invalid desktop layout: ${project.slug}`);
   }
   if (featured !== 1) throw new Error("Project registry must contain exactly one featured project");
 }

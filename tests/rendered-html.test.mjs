@@ -22,21 +22,27 @@ async function render(path = "/") {
   );
 }
 
-test("server-renders the first portfolio visual slice", async () => {
+test("server-renders the desktop shell with its taskbar and windows", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
   assert.match(html, /<title>Project Portfolio \| GBH England<\/title>/i);
-  assert.match(html, /Skip to featured project/);
-  assert.match(html, /<header[^>]*>/i);
-  assert.match(html, /<nav[^>]*aria-label="Primary navigation"/i);
-  assert.match(html, /id="project-stage"/);
-  assert.match(html, /Project stage/);
+  assert.match(html, /Skip to projects/);
+  assert.match(html, /class="desktop-title">alex_has_tech<\/h1>/);
+  assert.match(html, /<div class="taskbar" role="toolbar" aria-label="Open programs">/);
+  for (const label of ["Projects completed", "Projects in progress", "Get to know"]) {
+    assert.ok(html.includes(label), `taskbar is missing ${label}`);
+  }
+  // Windows ship closed but server-rendered, so tile content stays in the HTML.
+  for (const id of ["projects-completed", "projects-in-progress", "get-to-know"]) {
+    assert.ok(html.includes(`id="window-${id}"`), `missing window ${id}`);
+  }
+  assert.match(html, /class="tile-grid"/);
   assert.match(html, /GBH England/);
   assert.match(html, /In development/);
-  assert.match(html, /Portfolio status/);
+  assert.doesNotMatch(html, /Primary navigation/);
   assert.doesNotMatch(html, /Your site is taking shape/);
 });
 
@@ -53,6 +59,7 @@ test("server-renders each project with distinct truthful content", async () => {
     assert.ok(html.includes(status));
   }
   const utility = await (await render("/projects/thinkpad-mod-loader")).text();
+  assert.match(utility, /<img[^>]*\/projects\/thinkpad-mod-loader\/01\.jpg/);
   assert.match(utility, /<h2>Safety and support<\/h2>/);
   assert.match(utility, /Do not treat this page as compatibility or installation guidance/);
   const gbhEngland = await (await render("/projects/gbh-england")).text();

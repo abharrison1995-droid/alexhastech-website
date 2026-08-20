@@ -1,6 +1,6 @@
-# Project Portfolio
+# alex_has_tech
 
-A compact, identity-neutral software and game portfolio built with React and vinext. It uses a restrained Windows-95-inspired interface: project windows remain ordinary links and a normal-flow list is always available; a bounded drag arrangement is an optional wide-desktop enhancement.
+A software and game portfolio built with React and vinext, presented as a Windows-95 desktop. The page is a teal desktop carrying the `alex_has_tech` wordmark, with a taskbar across the top holding three programs: Projects completed, Projects in progress, and Get to know. Clicking one zooms a window out of its taskbar button; each window holds a four-across grid of project tiles that link through to ordinary project pages.
 
 ## Projects currently listed
 
@@ -8,7 +8,7 @@ A compact, identity-neutral software and game portfolio built with React and vin
 - CompTIA A+ revision suite — released.
 - Libreboot/Coreboot ThinkPad mod-loader utility — active. This site does not publish model support, prerequisites, recovery instructions, downloads, or compatibility claims.
 
-The portfolio includes owner-provided project screenshots (stored under `public/projects/<slug>/`) referenced by each project's `hero` and `gallery` fields. Public links, dates, metrics, personal identity, and contact details are not yet included; add verified material before publishing.
+The portfolio includes owner-provided project screenshots (stored under `public/projects/<slug>/`) referenced by each project's `hero` and `gallery` fields. Public links, dates, metrics, and contact details are not yet included; add verified material before publishing.
 
 ## Requirements
 
@@ -24,13 +24,15 @@ npm run build
 npm test
 ```
 
-`npm test` builds the vinext app and runs rendered-page and pure desktop-geometry tests. The scripts are compatible with Windows PowerShell.
+`npm test` builds the vinext app and runs rendered-page and project-registry tests. The scripts are compatible with Windows PowerShell.
 
 ## Content and interaction
 
-Project records live in `app/data/projects.ts`. An ordinary project needs only its content record. A project intended for the wide desktop arrangement also needs an explicit `desktop` layout entry; this prevents an added card from silently entering an invalid draggable composition.
+Project records live in `app/data/projects.ts`; a project needs only its content record. Its `status` decides which window it appears in — `Released` goes to Projects completed, anything else to Projects in progress.
 
-Desktop dragging is enabled only at wide fine-pointer viewports. It is title-bar-only, bounded, collision-safe, stored locally when available, and resettable. Keyboard navigation uses the normal project links; window arrangement is decorative.
+All three windows are server-rendered and start hidden, so tile content stays in the HTML for crawlers. Windows come to rest below the wordmark at an offset measured from the title at runtime, cascade 26px apart, raise on click, and close on Escape. Opening steps out of the taskbar button in six coarse frames; closing runs continuously so the larger per-frame change does not read as a stutter. Both are skipped under `prefers-reduced-motion`. Tiles are ordinary links and drop to two columns under 1000px and one under 620px.
+
+The `alex_has_tech` wordmark is set in Linebeam, self-hosted from `public/fonts/`. That font is free for personal, non-commercial use only and its licence asks that `linebeam.txt` stays alongside it — review before using this site commercially.
 
 ## Deployment
 

@@ -6,7 +6,7 @@ test("project registry accepts the declarative portfolio data", () => {
   assert.doesNotThrow(() => assertProjectRegistry(projects));
 });
 
-test("project registry rejects invalid layout and featured data", () => {
-  assert.throws(() => assertProjectRegistry([{ ...projects[0], desktop: { x: -1, y: 0, width: "large" } }]), /exactly one featured|Invalid desktop/);
+test("project registry rejects invalid featured and content data", () => {
   assert.throws(() => assertProjectRegistry([{ ...projects[0], featured: false }]), /exactly one featured/);
+  assert.throws(() => assertProjectRegistry([{ ...projects[0], summary: "  " }]), /Incomplete project detail/);
 });
