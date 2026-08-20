@@ -1,6 +1,6 @@
 # Personal Project Portfolio — Original Design Brief
 
-> Implementation architecture is superseded by the vinext/React durable plan in `.agents/artifacts/review-loops/20260820-personal-site-v2-plan.md`. This document remains the original product and visual brief; its Astro-specific sections are not the active implementation contract.
+> Implementation architecture is superseded by the vinext/React durable plan in `.agents/artifacts/review-loops/20260820-personal-site-v2-plan.md`. This document remains the original product and visual brief; its Astro-specific sections are not the active implementation contract. The Hosting target/Domain lines and Phase 7 (deployment) have been updated to match the real Cloudflare Workers stack; the rest of section 3 (Astro, content collections, repository structure) is still the superseded plan.
 
 ## 1. Product objective
 
@@ -43,8 +43,8 @@ The site should feel like a precise contemporary interpretation of Windows 95-er
 - **Content:** Astro content collections using Markdown/MDX project records with validated frontmatter.
 - **State:** `localStorage` only for the visitor's optional desktop arrangement and reduced local preferences.
 - **Images:** checked-in, optimized WebP/AVIF project images with useful alt text; PNG only where lossless pixel artwork requires it.
-- **Hosting target:** Cloudflare Pages from a GitHub repository. GitHub Pages remains the fallback.
-- **Domain:** one independently registered `.com` or `.co.uk` domain, with apex and `www` configured and one redirected to the canonical form.
+- **Hosting target:** Cloudflare Workers (with static assets), deployed via `wrangler deploy`. The vinext build emits a Worker entry (`worker/index.ts`) plus a static-assets binding — not a classic static Pages deploy, so use Cloudflare **Workers Builds** (Git-connected CI for Workers) rather than the Pages product for automatic deploys from `main`.
+- **Domain:** `alexhastech.dev`, registered and added to the Cloudflare account, with a Worker route/custom domain binding pointing the apex (and `www` if used) at the deployed Worker.
 
 ### Why this architecture
 
@@ -478,14 +478,17 @@ Drag movement itself should not be tracked.
 
 ### Phase 7 — Deployment and domain
 
-- Create the GitHub repository and protect the main deployment branch as appropriate.
-- Connect it to Cloudflare Pages and verify preview deployments.
-- Register the selected domain through a reputable registrar after checking renewal price.
-- Configure apex and `www`; choose one canonical URL and redirect the other.
+- GitHub repository created (`alexhastech-website`, public) — done.
+- Worker deployed manually and renamed to `alexhastech-website` (was `site-creator-vinext-starter`) — done. Live preview: `alexhastech-website.alexhastech.workers.dev`.
+- Do **not** add a static `wrangler.jsonc`/`wrangler.toml` at the project root — it would conflict with the config that's generated fresh into `dist/server/wrangler.json` on every `npm run build` (name, compatibility date, D1/R2 bindings all come from `vite.config.ts`/`.openai/hosting.json`). This was confirmed the hard way: a stale local `.wrangler/deploy/config.json` pointing at a different base path than a root config caused a "found both a user configuration file and a deploy configuration file" deploy failure.
+- Connect the repository to Cloudflare **Workers Builds** (Git-connected CI for Workers — not the Pages product, since this project deploys a Worker with a static-assets binding rather than a static Pages site). Configure it with a custom build command (`npm run build`) and deploy command (`npx wrangler deploy --config dist/server/wrangler.json`) rather than relying on auto-detection, so it deploys from the generated config instead of expecting a root one. Verify deployments trigger on push to `main`.
+- Decide whether D1/R2 are actually needed; both are currently disabled (`.openai/hosting.json` has `d1`/`r2` set to `null`). Leave disabled unless a real use case appears — avoid provisioning unused Cloudflare resources.
+- Register `alexhastech.dev` through a reputable registrar after checking renewal price, then add it to the Cloudflare account.
+- Configure a Worker route or custom domain binding for the apex (and `www` if used); choose one canonical URL and redirect the other.
 - Verify HTTPS, DNS, sitemap, social preview, canonical metadata, and 404 behaviour.
-- Add a lightweight update procedure to the repository README.
+- Add a lightweight update procedure (how to deploy, how to roll back) to the repository README.
 
-**Exit criteria:** production is reachable through the custom domain, deploys automatically from the repository, and can be updated without manual server work.
+**Exit criteria:** production is reachable through the custom domain, deploys automatically from the repository via Workers Builds, and can be updated without manual server work.
 
 ## 18. Definition of done for version one
 
