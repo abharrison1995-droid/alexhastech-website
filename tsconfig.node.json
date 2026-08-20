@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "types": ["node"],
+    "incremental": false
+  },
+  "include": [
+    "tests/**/*.ts",
+    "worker/**/*.ts",
+    "db/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}
