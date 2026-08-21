@@ -99,7 +99,7 @@ export function ClippyPane() {
           aria-atomic="true"
         >
           <div className="clippy-bubble-header">
-            <span className="clippy-bubble-title">Office Assistant</span>
+            <span className="clippy-bubble-title">Clippy</span>
             <span className="clippy-bubble-badge">v1.0 (1997)</span>
           </div>
           <p className="clippy-bubble-text">{currentQuote}</p>
@@ -114,14 +114,14 @@ export function ClippyPane() {
             className="bevel-out clippy-quick-btn"
             onClick={triggerNextQuote}
           >
-            Ask for wisdom
+            How's it going Clippy?
           </button>
           <button
             type="button"
             className="bevel-out clippy-quick-btn"
             onClick={triggerNextQuote}
           >
-            Say hello
+            Will I find love, Clippy?
           </button>
           <button
             type="button"
@@ -153,7 +153,7 @@ export function ClippyPane() {
 
       <div className="clippy-footer-note">
         <span className="clippy-counter">Wisdom dispensed: {talkCount}</span>
-        <span className="clippy-disclaimer">Zero GPUs or LLM tokens harmed in this computation.</span>
+        <span className="clippy-disclaimer">Zero GPUs or tokens harmed in this computation.</span>
       </div>
     </div>
   );
