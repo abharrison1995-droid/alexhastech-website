@@ -40,6 +40,7 @@ h1, h2, h3, p { margin-top: 0; }
    windows always come to rest underneath the alex_has_tech wordmark. */
 .win95-window { position: fixed; z-index: 10; top: calc(var(--window-top, 220px) + var(--cascade) * var(--cascade-step, 26px)); right: 0; left: 0; display: flex; flex-direction: column; width: min(1120px, calc(100% - 32px)); max-height: calc(100vh - var(--window-top, 220px) - var(--cascade) * var(--cascade-step, 26px) - 24px); margin-inline: auto; padding: 3px; background: var(--surface); color: var(--ink); box-shadow: inset 1px 1px 0 var(--highlight), inset -1px -1px 0 var(--shadow), 4px 4px 0 #00000055; transform: translate(var(--drag-x, 0px), var(--drag-y, 0px)); transform-origin: 50% 50%; }
 .win95-window--clippy { width: min(580px, calc(100% - 32px)); }
+.win95-window--about { width: min(670px, calc(100% - 32px)); }
 .win95-window[hidden] { display: none; }
 .win95-window[data-maximized="true"] { top: var(--taskbar-height); width: 100%; height: calc(100vh - var(--taskbar-height)); max-height: none; }
 .win95-window:focus { outline: none; }
@@ -150,7 +151,7 @@ h1, h2, h3, p { margin-top: 0; }
 .clippy-disclaimer { font-style: italic; }
 
 /* Get to know pane */
-.about-pane { max-width: 60ch; font-family: var(--ui-font); font-size: 13px; }
+.about-pane { width: 100%; font-family: var(--ui-font); font-size: 13px; }
 .about-pane h3 { margin-bottom: 8px; font-size: 15px; }
 .about-pane p { margin-bottom: 12px; color: var(--muted-ink); }
 .about-list { margin: 0; padding: 0; font-size: 13px; }

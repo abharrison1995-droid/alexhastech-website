@@ -52,7 +52,7 @@ test("server-renders each project with distinct truthful content", async () => {
   for (const [path, title, status] of [
     ["/projects/gbh-england", "GBH England", "In development"],
     ["/projects/comptia-revision-suite", "CompTIA A+ revision suite", "Released"],
-    ["/projects/thinkpad-mod-loader", "Libreboot/Coreboot ThinkPad mod-loader utility", "Active"],
+    ["/projects/thinkpad-mod-loader", "LibreCore Autoloader", "In development"],
     ["/projects/librebox", "Librebox", "In development"],
   ]) {
     const response = await render(path);

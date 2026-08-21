@@ -276,7 +276,7 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
               key={spec.id}
               id={`window-${spec.id}`}
               ref={(node) => { windowRefs.current[spec.id] = node; }}
-              className={`win95-window bevel-out${spec.id === "chatgpt-grandad" ? " win95-window--clippy" : ""}`}
+              className={`win95-window bevel-out${spec.id === "chatgpt-grandad" ? " win95-window--clippy" : spec.id === "get-to-know" ? " win95-window--about" : ""}`}
               style={{ "--cascade": index, zIndex: 10 + Math.max(open.indexOf(spec.id), 0) } as CSSProperties}
               hidden={!isOpen}
               tabIndex={-1}
@@ -326,9 +326,7 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
                     ? "Clippy 1.0 — Office Assistant"
                     : `${spec.id === "projects-completed" ? completed.length : inProgress.length} object(s)`}
                 </span>
-                <span className="bevel-in">
-                  {spec.id === "get-to-know" ? "About" : spec.id === "chatgpt-grandad" ? "AL-TECH" : "Portfolio"}
-                </span>
+                <span className="bevel-in">AL-TECH</span>
               </div>
             </section>
           );
