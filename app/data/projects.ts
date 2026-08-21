@@ -58,12 +58,27 @@ export const projects: readonly Project[] = [
     summary: "A utility for Libreboot/Coreboot ThinkPad modification workflows.",
     featured: false,
     accent: "navy",
-    detail: "No download is provided from this portfolio.",
+    detail: "Custom utility for automating Libreboot and Coreboot flashing workflows across classic ThinkPad hardware. No download is provided from this portfolio.",
     hero: { src: "/projects/thinkpad-mod-loader/01.jpg", alt: "Libreboot/Coreboot ThinkPad mod-loader utility — main screen" },
     gallery: [
       { src: "/projects/thinkpad-mod-loader/02.jpg", alt: "Libreboot/Coreboot ThinkPad mod-loader utility — secondary screen" },
     ],
     safety: ["Supported ThinkPad models, prerequisites, testing status, backup and recovery procedures, and checksums have not yet been published here.", "Do not treat this page as compatibility or installation guidance."],
+  },
+  {
+    slug: "librebox",
+    title: "Librebox",
+    status: "In development",
+    summary: "An open-source retro PC gaming frontend and virtualization manager for DOS, Windows 9x, and Windows XP titles.",
+    featured: false,
+    accent: "teal",
+    detail: "Combines a native Rust (Tauri v2) backend with an authentic Windows XP Luna Blue desktop interface built in Svelte 5 and TypeScript.",
+    safety: [],
+    hero: { src: "/projects/librebox/01.png", alt: "Librebox — Grid card view with game selected" },
+    gallery: [
+      { src: "/projects/librebox/02.png", alt: "Librebox — Detailed table list view" },
+      { src: "/projects/librebox/03.png", alt: "Librebox — Empty library view" },
+    ],
   },
 ] as const;
 

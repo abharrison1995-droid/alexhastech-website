@@ -5,10 +5,10 @@ import { useState, useRef, useEffect, useCallback, type FormEvent } from "react"
 export const CLIPPY_QUOTES = [
   "Haha! Excellent point!",
   "I'm going to say... you're correct!",
-  "Zero galons of water were used in this pointless response!",
+  "Zero gallons of water were used in this pointless response!",
   "Probably not... but Clippy believes in you!",
-  "My real names Tony but... nobody cares about the man underneath the metal.",
-  "It's'a me! Clippy!",
+  "My real name's Tony but... nobody cares about the man underneath the metal.",
+  "It's-a me! Clippy!",
 ] as const;
 
 class QuoteDeck {

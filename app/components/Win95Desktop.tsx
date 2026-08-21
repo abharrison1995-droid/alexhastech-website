@@ -63,13 +63,25 @@ function AboutPane({ projects }: { projects: readonly Project[] }) {
   );
 }
 
+function TaskbarClock() {
+  const [clock, setClock] = useState<string | null>(null);
+
+  useEffect(() => {
+    const tick = () => setClock(new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
+    tick();
+    const timer = setInterval(tick, 30000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return <span className="taskbar-tray bevel-in" aria-hidden="true">{clock ?? ""}</span>;
+}
+
 export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
   const completed = projects.filter((project) => project.status === "Released");
   const inProgress = projects.filter((project) => project.status !== "Released");
 
   const [open, setOpen] = useState<readonly WindowId[]>([]);
   const [maximized, setMaximized] = useState<readonly WindowId[]>([]);
-  const [clock, setClock] = useState<string | null>(null);
   const windowRefs = useRef<Partial<Record<WindowId, HTMLElement | null>>>({});
   const buttonRefs = useRef<Partial<Record<WindowId, HTMLButtonElement | null>>>({});
   const desktopRef = useRef<HTMLElement>(null);
@@ -124,13 +136,6 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
     window.addEventListener("resize", measure);
     document.fonts?.ready.then(measure).catch(() => {});
     return () => { observer.disconnect(); window.removeEventListener("resize", measure); };
-  }, []);
-
-  useEffect(() => {
-    const tick = () => setClock(new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
-    tick();
-    const timer = setInterval(tick, 30000);
-    return () => clearInterval(timer);
   }, []);
 
   const closeWindow = useCallback((id: WindowId, returnFocus = true) => {
@@ -257,7 +262,7 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
             <span>{spec.label}</span>
           </button>
         ))}
-        <span className="taskbar-tray bevel-in" aria-hidden="true">{clock ?? ""}</span>
+        <TaskbarClock />
       </div>
 
       <main className="desktop" id="desktop" ref={desktopRef}>
