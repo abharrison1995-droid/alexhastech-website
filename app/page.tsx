@@ -3,7 +3,7 @@ import { Win95Desktop } from "./components/Win95Desktop";
 import { projects } from "./data/projects";
 
 export const metadata: Metadata = {
-  title: "Project Portfolio | GBH England",
+  title: "alex_has_tech",
   description: "A portfolio of software and game projects, featuring the mobile role-playing game GBH England in development.",
 };
 

@@ -28,7 +28,7 @@ test("server-renders the desktop shell with its taskbar and windows", async () =
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Project Portfolio \| GBH England<\/title>/i);
+  assert.match(html, /<title>alex_has_tech<\/title>/i);
   assert.match(html, /Skip to projects/);
   assert.match(html, /class="desktop-title">alex_has_tech<\/h1>/);
   assert.match(html, /<div class="taskbar" role="toolbar" aria-label="Open programs">/);
