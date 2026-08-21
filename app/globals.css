@@ -29,7 +29,9 @@ h1, h2, h3, p { margin-top: 0; }
 .taskbar-glyph--navy { background: var(--caption-active); }
 .taskbar-glyph--gold { background: var(--gold); }
 .taskbar-glyph--magenta { background: var(--magenta); }
-.taskbar-tray { min-width: 76px; margin-left: auto; padding: 4px 8px; color: var(--ink); font: 400 12px/1 var(--ui-font); text-align: center; }
+.taskbar-github { flex: none; margin-left: auto; }
+.taskbar-github-icon { flex: none; }
+.taskbar-tray { min-width: 76px; padding: 4px 8px; color: var(--ink); font: 400 12px/1 var(--ui-font); text-align: center; }
 
 /* Desktop */
 .desktop { position: relative; display: flex; align-items: flex-start; justify-content: center; min-height: calc(100vh - var(--taskbar-height)); padding: 6vh 24px 48px; }
@@ -167,6 +169,7 @@ main.case-study { max-width: 820px; margin: 0 auto; padding: 40px 24px 72px; col
 .case-study section { margin-top: 32px; padding: 20px; background: #00000026; border-left: 4px solid #ffffff55; }
 .case-study section p:last-child { margin-bottom: 0; }
 .project-status { display: inline-block; margin-bottom: 20px; padding: 2px 6px; background: var(--caption-active); color: #fff; font-family: var(--mono-font); font-size: 12px; text-transform: uppercase; }
+.repo-link { display: inline-block; margin: 0 0 24px; color: #fff; font-family: var(--ui-font); font-size: 14px; font-weight: 700; text-underline-offset: 3px; }
 .screenshot { margin: 24px 0 0; }
 .screenshot img { display: block; max-width: 100%; height: auto; background: var(--surface); border: 2px solid; border-color: var(--face-light) var(--dark) var(--dark) var(--face-light); box-shadow: 4px 4px 0 #00000055; }
 .gallery-section { padding: 20px; }

@@ -16,6 +16,7 @@ export type Project = {
   safety: readonly string[];
   hero?: ProjectImage;
   gallery?: readonly ProjectImage[];
+  repoUrl?: string;
 };
 
 export const projects: readonly Project[] = [
@@ -29,6 +30,7 @@ export const projects: readonly Project[] = [
     detail: "Additional public material will be added when it is available.",
     safety: [],
     hero: { src: "/projects/gbh-england/01.png", alt: "GBH England — title or menu screen" },
+    repoUrl: "https://github.com/abharrison1995-droid/gba-england",
     gallery: [
       { src: "/projects/gbh-england/02.png", alt: "GBH England — gameplay screenshot" },
       { src: "/projects/gbh-england/03.png", alt: "GBH England — gameplay screenshot" },
@@ -45,6 +47,7 @@ export const projects: readonly Project[] = [
     accent: "teal",
     detail: "This project is listed as released.",
     safety: [],
+    repoUrl: "https://github.com/abharrison1995-droid/ultimate-comptia-a-test-app",
     hero: { src: "/projects/comptia-revision-suite/01.png", alt: "CompTIA A+ revision suite — main screen" },
     gallery: [
       { src: "/projects/comptia-revision-suite/02.png", alt: "CompTIA A+ revision suite — question screen" },
@@ -59,6 +62,7 @@ export const projects: readonly Project[] = [
     featured: false,
     accent: "navy",
     detail: "Custom utility for automating Libreboot and Coreboot flashing workflows across classic ThinkPad hardware. No download is provided from this portfolio.",
+    repoUrl: "https://github.com/abharrison1995-droid/Libre_Core-AutoLoader",
     hero: { src: "/projects/thinkpad-mod-loader/01.jpg", alt: "LibreCore Autoloader — main screen" },
     gallery: [
       { src: "/projects/thinkpad-mod-loader/02.jpg", alt: "LibreCore Autoloader — secondary screen" },
@@ -74,6 +78,7 @@ export const projects: readonly Project[] = [
     accent: "teal",
     detail: "Combines a native Rust (Tauri v2) backend with an authentic Windows XP Luna Blue desktop interface built in Svelte 5 and TypeScript.",
     safety: [],
+    repoUrl: "https://github.com/abharrison1995-droid/Librebox-VM",
     hero: { src: "/projects/librebox/01.png", alt: "Librebox — Grid card view with game selected" },
     gallery: [
       { src: "/projects/librebox/02.png", alt: "Librebox — Detailed table list view" },
