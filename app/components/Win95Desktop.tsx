@@ -3,13 +3,15 @@
 import Link from "next/link";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from "react";
 import type { Project } from "../data/projects";
+import { ClippyPane } from "./ClippyPane";
 
-type WindowId = "projects-completed" | "projects-in-progress" | "get-to-know";
-type WindowSpec = { id: WindowId; label: string; title: string; glyph: "navy" | "teal" | "gold" };
+type WindowId = "projects-completed" | "projects-in-progress" | "chatgpt-grandad" | "get-to-know";
+type WindowSpec = { id: WindowId; label: string; title: string; glyph: "navy" | "teal" | "gold" | "magenta" };
 
 const WINDOWS: readonly WindowSpec[] = [
   { id: "projects-completed", label: "Projects completed", title: "Projects completed", glyph: "teal" },
   { id: "projects-in-progress", label: "Projects in progress", title: "Projects in progress", glyph: "navy" },
+  { id: "chatgpt-grandad", label: "Summon ChatGPT's Grandad", title: "ChatGPT's Grandad — Clippy", glyph: "magenta" },
   { id: "get-to-know", label: "Get to know", title: "Get to know — alex_has_tech", glyph: "gold" },
 ] as const;
 
@@ -134,7 +136,10 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
   const closeWindow = useCallback((id: WindowId, returnFocus = true) => {
     const element = windowRefs.current[id];
     if (closing.current.has(id)) return;
+    let finished = false;
     const finish = () => {
+      if (finished) return;
+      finished = true;
       closing.current.delete(id);
       // Leave data-anim="closing" in place: React's hidden={true} (below) is what
       // actually removes the window from view. Clearing the attribute here would
@@ -161,7 +166,7 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
   }
 
   function raiseWindow(id: WindowId) {
-    setOpen((current) => (current.at(-1) === id ? current : [...current.filter((entry) => entry !== id), id]));
+    setOpen((current) => (!current.includes(id) || current.at(-1) === id ? current : [...current.filter((entry) => entry !== id), id]));
   }
 
   // Maximised windows fill the viewport via top/width/height; a leftover drag
@@ -301,9 +306,10 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
                 </span>
               </div>
 
-              <div className={`window-body bevel-in${spec.id === "get-to-know" ? "" : " window-body--pane"}`}>
+              <div className={`window-body bevel-in${spec.id === "projects-completed" || spec.id === "projects-in-progress" ? " window-body--pane" : ""}`}>
                 {spec.id === "projects-completed" && <ProjectPane projects={completed} emptyText="No completed projects to show yet." />}
                 {spec.id === "projects-in-progress" && <ProjectPane projects={inProgress} emptyText="Nothing in progress right now." />}
+                {spec.id === "chatgpt-grandad" && <ClippyPane />}
                 {spec.id === "get-to-know" && <AboutPane projects={projects} />}
               </div>
 
@@ -311,9 +317,13 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
                 <span className="bevel-in">
                   {spec.id === "get-to-know"
                     ? "alex_has_tech"
+                    : spec.id === "chatgpt-grandad"
+                    ? "Clippy 1.0 — Office Assistant"
                     : `${spec.id === "projects-completed" ? completed.length : inProgress.length} object(s)`}
                 </span>
-                <span className="bevel-in">{spec.id === "get-to-know" ? "About" : "Portfolio"}</span>
+                <span className="bevel-in">
+                  {spec.id === "get-to-know" ? "About" : spec.id === "chatgpt-grandad" ? "Assistant" : "Portfolio"}
+                </span>
               </div>
             </section>
           );

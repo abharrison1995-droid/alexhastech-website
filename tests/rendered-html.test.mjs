@@ -35,10 +35,12 @@ test("server-renders the desktop shell with its taskbar and windows", async () =
   for (const label of ["Projects completed", "Projects in progress", "Get to know"]) {
     assert.ok(html.includes(label), `taskbar is missing ${label}`);
   }
+  assert.match(html, /Summon ChatGPT(?:'|&#x27;|&#39;)s Grandad/);
   // Windows ship closed but server-rendered, so tile content stays in the HTML.
-  for (const id of ["projects-completed", "projects-in-progress", "get-to-know"]) {
+  for (const id of ["projects-completed", "projects-in-progress", "chatgpt-grandad", "get-to-know"]) {
     assert.ok(html.includes(`id="window-${id}"`), `missing window ${id}`);
   }
+  assert.match(html, /Clippy/);
   assert.match(html, /class="tile-grid"/);
   assert.match(html, /GBH England/);
   assert.match(html, /In development/);
