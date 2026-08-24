@@ -13,6 +13,7 @@ import {
   type ReactNode,
 } from "react";
 import type { Project, ProjectImage } from "../data/projects";
+import { POWERSHELL_LOGO_DATA_URL } from "../data/powershellLogo";
 import { BillboardStrip } from "./BillboardStrip";
 import { ClippyPane } from "./ClippyPane";
 
@@ -193,6 +194,8 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
   const inProgress = projects.filter((project) => project.status !== "Released");
   const [open, setOpen] = useState<readonly WindowId[]>([]);
   const [maximized, setMaximized] = useState<readonly WindowId[]>([]);
+  const [billboardOpen, setBillboardOpen] = useState(true);
+  const [billboardResetKey, setBillboardResetKey] = useState(0);
   const windowRefs = useRef<Partial<Record<WindowId, HTMLElement | null>>>({});
   const launchRefs = useRef<Partial<Record<WindowId, HTMLElement | null>>>({});
   const desktopRef = useRef<HTMLElement>(null);
@@ -405,12 +408,31 @@ export function Win95Desktop({ projects }: { projects: readonly Project[] }) {
         <a className="taskbar-button taskbar-github bevel-out" href="https://github.com/abharrison1995-droid" target="_blank" rel="noopener noreferrer">
           <GithubGlyph /><span>My GitHub</span>
         </a>
+        <button
+          className="taskbar-button taskbar-powershell bevel-out"
+          type="button"
+          aria-label={`${billboardOpen ? "Minimise" : "Restore"} ALTECH PowerShell bulletin`}
+          aria-controls="daily-billboard"
+          aria-pressed={billboardOpen}
+          title={`${billboardOpen ? "Minimise" : "Restore"} ALTECH PowerShell`}
+          onClick={() => setBillboardOpen((current) => !current)}
+        >
+          <img src={POWERSHELL_LOGO_DATA_URL} alt="" aria-hidden="true" />
+        </button>
         <TaskbarClock />
       </div>
 
       <main className="desktop" id="desktop" ref={desktopRef}>
         <h1 className="desktop-title" ref={titleRef}>alex_has_tech</h1>
-        <BillboardStrip />
+        <BillboardStrip
+          key={billboardResetKey}
+          isOpen={billboardOpen}
+          onMinimize={() => setBillboardOpen(false)}
+          onClose={() => {
+            setBillboardOpen(false);
+            setBillboardResetKey((current) => current + 1);
+          }}
+        />
 
         {renderWindow({ id: "projects-completed", title: "Projects completed", body: <ProjectPane projects={completed} emptyText="No completed projects to show yet." onOpen={openProject} />, status: `${completed.length} object(s)`, cascade: 0, pane: true })}
         {renderWindow({ id: "projects-in-progress", title: "Projects in progress", body: <ProjectPane projects={inProgress} emptyText="Nothing in progress right now." onOpen={openProject} />, status: `${inProgress.length} object(s)`, cascade: 1, pane: true })}

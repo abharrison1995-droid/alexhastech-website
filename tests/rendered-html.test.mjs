@@ -42,7 +42,10 @@ test("server-renders the desktop shell with its taskbar and windows", async () =
   }
   assert.match(html, /Clippy/);
   assert.match(html, /class="tile-grid"/);
-  assert.match(html, /ALEXNET DAILY WIRE/);
+  assert.match(html, /ALTECH PowerShell/);
+  assert.match(html, /id="daily-billboard"/);
+  assert.match(html, /aria-label="Minimise ALTECH PowerShell bulletin"/);
+  assert.match(html, /aria-label="Close ALTECH PowerShell bulletin"/);
   assert.match(html, /Daily GitHub and technology feed awaiting its first dispatch/);
   // Project detail windows mount only after a tile is opened, avoiding eager gallery downloads.
   for (const slug of ["gbh-england", "comptia-revision-suite", "thinkpad-mod-loader", "librebox"]) {
