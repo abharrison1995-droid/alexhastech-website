@@ -42,6 +42,13 @@ test("server-renders the desktop shell with its taskbar and windows", async () =
   }
   assert.match(html, /Clippy/);
   assert.match(html, /class="tile-grid"/);
+  assert.match(html, /ALEXNET DAILY WIRE/);
+  assert.match(html, /Daily GitHub and technology feed awaiting its first dispatch/);
+  // Project detail windows mount only after a tile is opened, avoiding eager gallery downloads.
+  for (const slug of ["gbh-england", "comptia-revision-suite", "thinkpad-mod-loader", "librebox"]) {
+    assert.ok(!html.includes(`id="window-project-${slug}"`), `project window ${slug} should be lazy`);
+  }
+  assert.match(html, /Tauri v2/);
   assert.match(html, /GBH England/);
   assert.match(html, /In development/);
   assert.doesNotMatch(html, /Primary navigation/);
@@ -60,6 +67,7 @@ test("server-renders each project with distinct truthful content", async () => {
     const html = await response.text();
     assert.ok(html.includes(title));
     assert.ok(html.includes(status));
+    assert.match(html, /<h2>Technical details<\/h2>/);
   }
   const utility = await (await render("/projects/thinkpad-mod-loader")).text();
   assert.match(utility, /<img[^>]*\/projects\/thinkpad-mod-loader\/01\.jpg/);

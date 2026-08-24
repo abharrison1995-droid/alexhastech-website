@@ -9,4 +9,6 @@ test("project registry accepts the declarative portfolio data", () => {
 test("project registry rejects invalid featured and content data", () => {
   assert.throws(() => assertProjectRegistry([{ ...projects[0], featured: false }]), /exactly one featured/);
   assert.throws(() => assertProjectRegistry([{ ...projects[0], summary: "  " }]), /Incomplete project detail/);
+  assert.throws(() => assertProjectRegistry([{ ...projects[0], technologies: [] }]), /Invalid project technologies/);
+  assert.throws(() => assertProjectRegistry([{ ...projects[0], technicalHighlights: ["  "] }]), /Invalid technical highlights/);
 });

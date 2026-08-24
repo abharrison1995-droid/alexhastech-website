@@ -114,7 +114,7 @@ export function ClippyPane() {
             className="bevel-out clippy-quick-btn"
             onClick={triggerNextQuote}
           >
-            How's it going Clippy?
+            {"How's it going Clippy?"}
           </button>
           <button
             type="button"
@@ -134,7 +134,7 @@ export function ClippyPane() {
 
         <form className="clippy-input-row" onSubmit={handleFormSubmit}>
           <label htmlFor="clippy-talk-input" className="sr-only">
-            Talk with ChatGPT's Grandad
+            {"Talk with ChatGPT's Grandad"}
           </label>
           <input
             id="clippy-talk-input"

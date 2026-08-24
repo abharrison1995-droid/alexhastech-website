@@ -29,6 +29,7 @@ export default async function ProjectPage({ params }: Props) {
     {project.repoUrl && <a className="repo-link" href={project.repoUrl} target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">→</span></a>}
     {project.hero && <Screenshot image={project.hero} priority />}
     <section><h2>Overview</h2><p>{project.summary}</p></section>
+    <section><h2>Technical details</h2><p><strong>Role:</strong> {project.role}</p><ul>{project.technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul>{project.technicalHighlights.map((highlight) => <p key={highlight}>{highlight}</p>)}</section>
     {project.gallery && project.gallery.length > 0 && <section className="gallery-section"><h2>Gallery</h2><div className="gallery">{project.gallery.map((image) => <Screenshot key={image.src} image={image} />)}</div></section>}
     {project.safety.length > 0 ? <section className="safety-note"><h2>Safety and support</h2>{project.safety.map((note) => <p key={note}>{note}</p>)}<p>{project.detail}</p></section> : <section><h2>Current status</h2><p>{project.detail}</p></section>}
     <Link className="back-link" href="/">← All projects</Link>

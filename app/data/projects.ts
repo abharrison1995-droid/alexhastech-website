@@ -13,6 +13,9 @@ export type Project = {
   featured: boolean;
   accent: "teal" | "navy" | "gold";
   detail: string;
+  role: string;
+  technologies: readonly string[];
+  technicalHighlights: readonly string[];
   safety: readonly string[];
   hero?: ProjectImage;
   gallery?: readonly ProjectImage[];
@@ -28,6 +31,12 @@ export const projects: readonly Project[] = [
     featured: true,
     accent: "gold",
     detail: "Additional public material will be added when it is available.",
+    role: "Creator and developer",
+    technologies: ["Mobile game development", "RPG systems"],
+    technicalHighlights: [
+      "Dialogue-led role-playing structure with character interactions.",
+      "Mobile-first presentation built around compact gameplay scenes.",
+    ],
     safety: [],
     hero: { src: "/projects/gbh-england/01.png", alt: "GBH England — title or menu screen" },
     repoUrl: "https://github.com/abharrison1995-droid/gba-england",
@@ -46,6 +55,12 @@ export const projects: readonly Project[] = [
     featured: false,
     accent: "teal",
     detail: "This project is listed as released.",
+    role: "Creator and developer",
+    technologies: ["Desktop application", "CompTIA A+ content"],
+    technicalHighlights: [
+      "Structured revision flow spanning questions, answers, and results.",
+      "Purpose-built study interface for repeatable exam practice.",
+    ],
     safety: [],
     repoUrl: "https://github.com/abharrison1995-droid/ultimate-comptia-a-test-app",
     hero: { src: "/projects/comptia-revision-suite/01.png", alt: "CompTIA A+ revision suite — main screen" },
@@ -62,6 +77,12 @@ export const projects: readonly Project[] = [
     featured: false,
     accent: "navy",
     detail: "Custom utility for automating Libreboot and Coreboot flashing workflows across classic ThinkPad hardware. No download is provided from this portfolio.",
+    role: "Creator and developer",
+    technologies: ["Libreboot", "Coreboot", "ThinkPad firmware workflows"],
+    technicalHighlights: [
+      "Menu-driven workflow for selecting firmware bases and payloads.",
+      "Automates repeatable preparation steps while keeping hardware safety guidance explicit.",
+    ],
     repoUrl: "https://github.com/abharrison1995-droid/Libre_Core-AutoLoader",
     hero: { src: "/projects/thinkpad-mod-loader/01.jpg", alt: "LibreCore Autoloader — main screen" },
     gallery: [
@@ -77,6 +98,13 @@ export const projects: readonly Project[] = [
     featured: false,
     accent: "teal",
     detail: "Combines a native Rust (Tauri v2) backend with an authentic Windows XP Luna Blue desktop interface built in Svelte 5 and TypeScript.",
+    role: "Creator and lead developer",
+    technologies: ["Tauri v2", "Rust", "Svelte 5", "TypeScript"],
+    technicalHighlights: [
+      "Native Rust backend packaged through Tauri v2.",
+      "Windows XP Luna-inspired interface implemented with Svelte 5 and TypeScript.",
+      "Grid and table library views for DOS, Windows 9x, and Windows XP games.",
+    ],
     safety: [],
     repoUrl: "https://github.com/abharrison1995-droid/Librebox-VM",
     hero: { src: "/projects/librebox/01.png", alt: "Librebox — Grid card view with game selected" },
@@ -93,7 +121,9 @@ export function assertProjectRegistry(records: readonly Project[]) {
   for (const project of records) {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(project.slug) || slugs.has(project.slug)) throw new Error(`Invalid project slug: ${project.slug}`);
     slugs.add(project.slug);
-    if (!project.title.trim() || !project.summary.trim() || !project.detail.trim()) throw new Error(`Incomplete project detail: ${project.slug}`);
+    if (!project.title.trim() || !project.summary.trim() || !project.detail.trim() || !project.role.trim()) throw new Error(`Incomplete project detail: ${project.slug}`);
+    if (project.technologies.length === 0 || project.technologies.some((technology) => !technology.trim())) throw new Error(`Invalid project technologies: ${project.slug}`);
+    if (project.technicalHighlights.length === 0 || project.technicalHighlights.some((highlight) => !highlight.trim())) throw new Error(`Invalid technical highlights: ${project.slug}`);
     if (!Array.isArray(project.safety) || project.safety.some((note) => !note.trim())) throw new Error(`Invalid safety notes: ${project.slug}`);
     if (project.hero && (!project.hero.src.trim() || !project.hero.alt.trim())) throw new Error(`Invalid hero image: ${project.slug}`);
     if (project.gallery && (project.gallery.length === 0 || project.gallery.some((image) => !image.src.trim() || !image.alt.trim()))) throw new Error(`Invalid gallery images: ${project.slug}`);

@@ -1,0 +1,64 @@
+name: Publish daily billboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Retry through late morning; the script emits at most one edition per
+    # London calendar day and never runs before 07:00 local time.
+    - cron: "30 6-10 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-billboard
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Generate daily edition
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_READ_TOKEN: ${{ secrets.GITHUB_READ_TOKEN }}
+          OPENAI_MODEL: gpt-5.6-luna
+        run: node scripts/publish-billboard.mjs
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: daily-billboard
+          path: public/data/billboard.json
+          retention-days: 1
+
+  commit:
+    needs: generate
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: daily-billboard
+          path: public/data
+      - name: Commit changed edition
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
+        run: |
+          if git diff --quiet -- public/data/billboard.json; then
+            echo "The duplicate UTC run produced no change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/billboard.json
+          git commit -m "chore: update daily billboard"
+          git push origin "HEAD:${TARGET_BRANCH}"
