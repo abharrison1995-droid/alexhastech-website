@@ -36,12 +36,12 @@ export function BillboardStrip() {
   const entries = useMemo(() => [
     {
       key: "github",
-      label: `GITHUB ${edition.github.windowHours}H // ${edition.github.summary}`,
+      label: `PS C:\\ALEXNET> github --since ${edition.github.windowHours}h :: ${edition.github.summary}`,
       url: "https://github.com/abharrison1995-droid",
     },
     ...edition.stories.map((story, index) => ({
       key: story.url,
-      label: `TECH ${index + 1}/5 // ${story.headline} [${story.source}]`,
+      label: `PS C:\\ALEXNET> tech[${index + 1}/5] :: ${story.headline} [${story.source}]`,
       url: story.url,
     })),
   ], [edition]);
@@ -59,7 +59,7 @@ export function BillboardStrip() {
   return (
     <aside className="billboard" aria-label="Daily GitHub activity and technology headlines">
       <div className="billboard-header">
-        <span>ALEXNET DAILY WIRE</span>
+        <span><span className="billboard-powershell-icon" aria-hidden="true">&gt;_</span>Windows PowerShell — ALEXNET DAILY WIRE</span>
         <span>{formatUpdatedAt(edition.generatedAt)}</span>
       </div>
       <div className="billboard-viewport">
