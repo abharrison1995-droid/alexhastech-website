@@ -48,7 +48,7 @@ test("server-renders the desktop shell with its taskbar and windows", async () =
   assert.match(html, /aria-label="Close ALTECH PowerShell bulletin"/);
   assert.match(html, /Daily GitHub and technology feed awaiting its first dispatch/);
   // Project detail windows mount only after a tile is opened, avoiding eager gallery downloads.
-  for (const slug of ["gbh-england", "comptia-revision-suite", "thinkpad-mod-loader", "librebox"]) {
+  for (const slug of ["gbh-england", "comptia-revision-suite", "olds-cool-3d-master", "thinkpad-mod-loader", "librebox"]) {
     assert.ok(!html.includes(`id="window-project-${slug}"`), `project window ${slug} should be lazy`);
   }
   assert.match(html, /Tauri v2/);
@@ -62,6 +62,7 @@ test("server-renders each project with distinct truthful content", async () => {
   for (const [path, title, status] of [
     ["/projects/gbh-england", "GBH England", "In development"],
     ["/projects/comptia-revision-suite", "CompTIA A+ revision suite", "Released"],
+    ["/projects/olds-cool-3d-master", "Olds Cool 3D Master", "Released"],
     ["/projects/thinkpad-mod-loader", "LibreCore Autoloader", "In development"],
     ["/projects/librebox", "Librebox", "In development"],
   ]) {
