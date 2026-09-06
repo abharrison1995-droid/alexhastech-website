@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { collectGoogleSearchSourceUrls, fetchGithubEvents, isScheduledEditionDue, summarizeGithubEvents, validateStories } from "../scripts/publish-billboard.mjs";
+import { compactHeadline, fetchGithubEvents, isScheduledEditionDue, parseFeedEntries, summarizeGithubEvents, validateStories } from "../scripts/publish-billboard.mjs";
 
 test("summarizes only public recent GitHub activity", () => {
   const now = new Date("2026-08-24T06:30:00.000Z");
@@ -39,7 +39,7 @@ test("paginates GitHub events until it passes the 72-hour cutoff", async () => {
   assert.equal(events.length, 101);
 });
 
-test("requires every fresh technology story URL to come from Google Search grounding", () => {
+test("accepts only stories from supplied news-feed records", () => {
   const now = new Date("2026-08-24T06:30:00.000Z");
   const stories = Array.from({ length: 5 }, (_, index) => ({
     headline: `Technology update number ${index + 1}`,
@@ -47,15 +47,16 @@ test("requires every fresh technology story URL to come from Google Search groun
     url: `https://news.example/story-${index + 1}`,
     publishedAt: "2026-08-24T05:00:00.000Z",
   }));
-  const response = {
-    candidates: [{
-      groundingMetadata: {
-        groundingChunks: stories.map((story) => ({ web: { uri: story.url } })),
-      },
-    }],
-  };
-  const evidence = collectGoogleSearchSourceUrls(response);
+  const evidence = new Set(stories.map((story) => story.url));
   assert.deepEqual(validateStories({ stories }, evidence, now), stories);
   assert.throws(() => validateStories({ stories: stories.map((story, index) => index === 0 ? { ...story, url: "https://fabricated.example/story" } : story) }, evidence, now), /evidence/);
   assert.throws(() => validateStories({ stories: stories.map((story, index) => index === 0 ? { ...story, publishedAt: "2026-08-22T05:00:00.000Z" } : story) }, evidence, now), /24-hour/);
+});
+
+test("parses RSS and Atom items and keeps headlines compact", () => {
+  const rss = `<rss><channel><item><title>One &amp; Two</title><link>https://news.example/one</link><pubDate>Sun, 06 Sep 2026 18:00:00 GMT</pubDate></item></channel></rss>`;
+  const atom = `<feed><entry><title>Three</title><link href="https://news.example/three"/><published>2026-09-06T18:30:00Z</published></entry></feed>`;
+  assert.deepEqual(parseFeedEntries(rss, "Example"), [{ headline: "One & Two", source: "Example", url: "https://news.example/one", publishedAt: "2026-09-06T18:00:00.000Z" }]);
+  assert.equal(parseFeedEntries(atom, "Example")[0].url, "https://news.example/three");
+  assert.equal(compactHeadline("one two three four five six seven eight nine ten"), "one two three four five six seven eight nine…");
 });

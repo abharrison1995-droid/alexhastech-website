@@ -4,6 +4,12 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const GITHUB_USERNAME = "abharrison1995-droid";
 const GITHUB_WINDOW_HOURS = 72;
+const NEWS_WINDOW_HOURS = 24;
+const NEWS_FEEDS = [
+  { source: "Ars Technica", url: "https://feeds.arstechnica.com/arstechnica/index" },
+  { source: "TechCrunch", url: "https://techcrunch.com/feed/" },
+  { source: "The Verge", url: "https://www.theverge.com/rss/index.xml" },
+];
 
 function plural(count, singular, pluralForm = `${singular}s`) {
   return `${count} ${count === 1 ? singular : pluralForm}`;
@@ -135,15 +141,59 @@ function normalizedSourceUrl(value) {
   }
 }
 
-export function collectGoogleSearchSourceUrls(response) {
-  const sources = new Set();
-  for (const candidate of response?.candidates ?? []) {
-    for (const chunk of candidate?.groundingMetadata?.groundingChunks ?? []) {
-      const normalized = normalizedSourceUrl(chunk?.web?.uri);
-      if (normalized) sources.add(normalized);
-    }
+function decodeXml(value) {
+  return value
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/gi, "$1")
+    .replace(/<[^>]+>/g, "")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, "\"")
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+    .trim();
+}
+
+function xmlTag(block, tagName) {
+  const match = block.match(new RegExp(`<${tagName}(?:\\s[^>]*)?>([\\s\\S]*?)</${tagName}>`, "i"));
+  return match ? decodeXml(match[1]) : null;
+}
+
+export function parseFeedEntries(xml, source) {
+  const entries = [];
+  const blocks = xml.matchAll(/<(item|entry)(?:\s[^>]*)?>([\s\S]*?)<\/\1>/gi);
+  for (const match of blocks) {
+    const block = match[2];
+    const atomLink = block.match(/<link\b[^>]*\bhref=["']([^"']+)["'][^>]*>/i)?.[1];
+    const url = normalizedSourceUrl(atomLink ?? xmlTag(block, "link"));
+    const title = xmlTag(block, "title");
+    const publishedAt = xmlTag(block, "pubDate") ?? xmlTag(block, "published") ?? xmlTag(block, "updated") ?? xmlTag(block, "dc:date");
+    if (!url || !title || !publishedAt || !Number.isFinite(Date.parse(publishedAt))) continue;
+    entries.push({ headline: title, source, url, publishedAt: new Date(publishedAt).toISOString() });
   }
-  return sources;
+  return entries;
+}
+
+export function compactHeadline(value) {
+  const words = value.trim().split(/\s+/).filter(Boolean);
+  if (words.length <= 9) return words.join(" ");
+  return [...words.slice(0, 8), `${words[8].replace(/[,.!?;:]+$/, "")}…`].join(" ");
+}
+
+async function fetchRecentFeedStories(now, fetchImpl = fetch) {
+  const cutoff = now.getTime() - NEWS_WINDOW_HOURS * 60 * 60 * 1000;
+  const responses = await Promise.all(NEWS_FEEDS.map(async (feed) => {
+    const response = await fetchImpl(feed.url, { headers: { accept: "application/atom+xml, application/rss+xml, application/xml, text/xml" } });
+    if (!response.ok) throw new Error(`${feed.source} feed request failed (${response.status})`);
+    return parseFeedEntries(await response.text(), feed.source);
+  }));
+  const seen = new Set();
+  const stories = responses.flat()
+    .filter((story) => Date.parse(story.publishedAt) >= cutoff)
+    .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt))
+    .filter((story) => !seen.has(story.url) && seen.add(story.url));
+  if (stories.length < 5) throw new Error("Fewer than five fresh stories were available from the public news feeds");
+  return stories.slice(0, 15);
 }
 
 export function validateStories(value, evidenceUrls, now = new Date()) {
@@ -169,28 +219,28 @@ export function validateStories(value, evidenceUrls, now = new Date()) {
   return value.stories;
 }
 
-async function fetchTechStories(now) {
+async function fetchTechStories(now, fetchImpl = fetch) {
+  const candidates = await fetchRecentFeedStories(now, fetchImpl);
   const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) throw new Error("GEMINI_API_KEY is required");
-  const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
-  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
+  if (!apiKey) return candidates.slice(0, 5).map((story) => ({ ...story, headline: compactHeadline(story.headline) }));
+  const model = process.env.GEMINI_MODEL || "gemini-3.6-flash";
+  const response = await fetchImpl(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
     method: "POST",
     headers: { "content-type": "application/json", "x-goog-api-key": apiKey },
     body: JSON.stringify({
       systemInstruction: {
-        parts: [{ text: "You are the editor of a tiny public technology-news wire. Use Google Search grounding. Select five distinct, consequential technology stories first published or materially updated in the previous 24 hours. Prefer primary reporting and reputable technology publications. Exclude rumours, opinion-only pieces, sponsored content, and duplicate angles on the same event. Headlines must be factual, neutral, and no more than nine words. Each story URL must exactly match a Google Search source you used. Return only valid JSON, with no Markdown, in this shape: {\"stories\":[{\"headline\":\"string\",\"source\":\"string\",\"url\":\"https://...\",\"publishedAt\":\"ISO-8601 timestamp\"}]}" }],
+        parts: [{ text: "You are the editor of a tiny public technology-news wire. From the supplied source records, select five distinct, consequential technology stories. Preserve each source, URL, and publication timestamp exactly. Rewrite only the headline: factual, neutral, and no more than nine words. Return only valid JSON, with no Markdown, in this shape: {\"stories\":[{\"headline\":\"string\",\"source\":\"string\",\"url\":\"https://...\",\"publishedAt\":\"ISO-8601 timestamp\"}]}" }],
       },
       contents: [{
         role: "user",
-        parts: [{ text: `Prepare the edition generated at ${now.toISOString()}. Verify every publication time and use an exact sourced article URL, not a publication home page.` }],
+        parts: [{ text: `Prepare the edition generated at ${now.toISOString()} from these fresh source records:\n${JSON.stringify(candidates)}` }],
       }],
-      tools: [{ google_search: {} }],
       generationConfig: { temperature: 0.2 },
     }),
   });
   if (!response.ok) throw new Error(`Gemini news request failed (${response.status}): ${await response.text()}`);
   const payload = await response.json();
-  return validateStories(parseJsonResponse(extractGeminiText(payload)), collectGoogleSearchSourceUrls(payload), now);
+  return validateStories(parseJsonResponse(extractGeminiText(payload)), new Set(candidates.map((story) => story.url)), now);
 }
 
 function billboardOutputPath() {
