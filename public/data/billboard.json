@@ -1,9 +1,46 @@
 {
-  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "generatedAt": "2026-09-06T20:49:09.556Z",
   "github": {
     "windowHours": 72,
-    "summary": "Daily GitHub and technology feed awaiting its first dispatch.",
-    "repositories": []
+    "summary": "alexhastech-website: 1 commit",
+    "repositories": [
+      {
+        "name": "alexhastech-website",
+        "url": "https://github.com/abharrison1995-droid/alexhastech-website",
+        "summary": "1 commit"
+      }
+    ]
   },
-  "stories": []
+  "stories": [
+    {
+      "headline": "Authors oppose publisher demands for Anthropic settlement funds",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/",
+      "publishedAt": "2026-09-06T20:47:37.000Z"
+    },
+    {
+      "headline": "German company launches Europe's first commercial orbital rocket",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/space/2026/09/german-company-becomes-first-in-europe-to-launch-fully-commercial-orbital-rocket/",
+      "publishedAt": "2026-09-06T11:55:26.000Z"
+    },
+    {
+      "headline": "Travis Kalanick's Atoms explores entry into robotaxi market",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/06/travis-kalanicks-atoms-might-be-getting-into-the-robotaxi-business/",
+      "publishedAt": "2026-09-06T16:45:00.000Z"
+    },
+    {
+      "headline": "Two newspapers sue OpenAI and Microsoft over copyright",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/05/seattle-times-and-newsday-are-the-latest-publications-to-sue-openai-and-microsoft/",
+      "publishedAt": "2026-09-05T22:49:55.000Z"
+    },
+    {
+      "headline": "Upcoming iPhone feature enables number sharing across devices",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/990868/iphone-handoff-ios-27",
+      "publishedAt": "2026-09-05T20:53:58.000Z"
+    }
+  ]
 }
