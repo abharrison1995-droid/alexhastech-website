@@ -106,15 +106,22 @@ export async function fetchGithubEvents(now = new Date(), fetchImpl = fetch) {
   return events;
 }
 
-function extractOutputText(response) {
-  if (typeof response.output_text === "string") return response.output_text;
-  for (const item of response.output ?? []) {
-    if (item.type !== "message") continue;
-    for (const content of item.content ?? []) {
-      if (content.type === "output_text" && typeof content.text === "string") return content.text;
-    }
+function extractGeminiText(response) {
+  const parts = response?.candidates?.[0]?.content?.parts;
+  if (!Array.isArray(parts)) throw new Error("Gemini response did not contain content parts");
+  const text = parts.map((part) => part?.text).filter((part) => typeof part === "string").join("").trim();
+  if (!text) throw new Error("Gemini response did not contain output text");
+  return text;
+}
+
+function parseJsonResponse(text) {
+  try {
+    return JSON.parse(text);
+  } catch {
+    const fencedJson = text.match(/^```(?:json)?\s*([\s\S]*?)\s*```$/i)?.[1];
+    if (!fencedJson) throw new Error("Gemini response was not valid JSON");
+    return JSON.parse(fencedJson);
   }
-  throw new Error("OpenAI response did not contain output text");
 }
 
 function normalizedSourceUrl(value) {
@@ -128,13 +135,11 @@ function normalizedSourceUrl(value) {
   }
 }
 
-export function collectWebSearchSourceUrls(response) {
+export function collectGoogleSearchSourceUrls(response) {
   const sources = new Set();
-  for (const item of response?.output ?? []) {
-    if (item?.type !== "web_search_call") continue;
-    const candidates = [item.action?.url, ...(item.action?.sources ?? []).map((source) => source?.url)];
-    for (const candidate of candidates) {
-      const normalized = normalizedSourceUrl(candidate);
+  for (const candidate of response?.candidates ?? []) {
+    for (const chunk of candidate?.groundingMetadata?.groundingChunks ?? []) {
+      const normalized = normalizedSourceUrl(chunk?.web?.uri);
       if (normalized) sources.add(normalized);
     }
   }
@@ -165,53 +170,27 @@ export function validateStories(value, evidenceUrls, now = new Date()) {
 }
 
 async function fetchTechStories(now) {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) throw new Error("OPENAI_API_KEY is required");
-  const response = await fetch("https://api.openai.com/v1/responses", {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) throw new Error("GEMINI_API_KEY is required");
+  const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
     method: "POST",
-    headers: { authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
+    headers: { "content-type": "application/json", "x-goog-api-key": apiKey },
     body: JSON.stringify({
-      model: process.env.OPENAI_MODEL || "gpt-5.6-luna",
-      store: false,
-      tools: [{ type: "web_search" }],
-      include: ["web_search_call.action.sources"],
-      instructions: "You are the editor of a tiny public technology-news wire. Use web search. Select five distinct, consequential technology stories first published or materially updated in the previous 24 hours. Prefer primary reporting and reputable technology publications. Exclude rumours, opinion-only pieces, sponsored content, and duplicate angles on the same event. Headlines must be factual, neutral, and no more than nine words. Each story URL must be copied exactly from a web-search result you used. Return only the requested structured data.",
-      input: `Prepare the edition generated at ${now.toISOString()}. Verify every publication time and use the exact cited article URL, not a publication home page.`,
-      text: {
-        format: {
-          type: "json_schema",
-          name: "daily_technology_wire",
-          strict: true,
-          schema: {
-            type: "object",
-            additionalProperties: false,
-            required: ["stories"],
-            properties: {
-              stories: {
-                type: "array",
-                minItems: 5,
-                maxItems: 5,
-                items: {
-                  type: "object",
-                  additionalProperties: false,
-                  required: ["headline", "source", "url", "publishedAt"],
-                  properties: {
-                    headline: { type: "string", maxLength: 80 },
-                    source: { type: "string", maxLength: 80 },
-                    url: { type: "string" },
-                    publishedAt: { type: "string" },
-                  },
-                },
-              },
-            },
-          },
-        },
+      systemInstruction: {
+        parts: [{ text: "You are the editor of a tiny public technology-news wire. Use Google Search grounding. Select five distinct, consequential technology stories first published or materially updated in the previous 24 hours. Prefer primary reporting and reputable technology publications. Exclude rumours, opinion-only pieces, sponsored content, and duplicate angles on the same event. Headlines must be factual, neutral, and no more than nine words. Each story URL must exactly match a Google Search source you used. Return only valid JSON, with no Markdown, in this shape: {\"stories\":[{\"headline\":\"string\",\"source\":\"string\",\"url\":\"https://...\",\"publishedAt\":\"ISO-8601 timestamp\"}]}" }],
       },
+      contents: [{
+        role: "user",
+        parts: [{ text: `Prepare the edition generated at ${now.toISOString()}. Verify every publication time and use an exact sourced article URL, not a publication home page.` }],
+      }],
+      tools: [{ google_search: {} }],
+      generationConfig: { temperature: 0.2 },
     }),
   });
-  if (!response.ok) throw new Error(`OpenAI news request failed (${response.status}): ${await response.text()}`);
+  if (!response.ok) throw new Error(`Gemini news request failed (${response.status}): ${await response.text()}`);
   const payload = await response.json();
-  return validateStories(JSON.parse(extractOutputText(payload)), collectWebSearchSourceUrls(payload), now);
+  return validateStories(parseJsonResponse(extractGeminiText(payload)), collectGoogleSearchSourceUrls(payload), now);
 }
 
 function billboardOutputPath() {

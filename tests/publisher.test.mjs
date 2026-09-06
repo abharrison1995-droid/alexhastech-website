@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { collectWebSearchSourceUrls, fetchGithubEvents, isScheduledEditionDue, summarizeGithubEvents, validateStories } from "../scripts/publish-billboard.mjs";
+import { collectGoogleSearchSourceUrls, fetchGithubEvents, isScheduledEditionDue, summarizeGithubEvents, validateStories } from "../scripts/publish-billboard.mjs";
 
 test("summarizes only public recent GitHub activity", () => {
   const now = new Date("2026-08-24T06:30:00.000Z");
@@ -39,7 +39,7 @@ test("paginates GitHub events until it passes the 72-hour cutoff", async () => {
   assert.equal(events.length, 101);
 });
 
-test("requires every fresh technology story URL to come from web-search evidence", () => {
+test("requires every fresh technology story URL to come from Google Search grounding", () => {
   const now = new Date("2026-08-24T06:30:00.000Z");
   const stories = Array.from({ length: 5 }, (_, index) => ({
     headline: `Technology update number ${index + 1}`,
@@ -48,12 +48,13 @@ test("requires every fresh technology story URL to come from web-search evidence
     publishedAt: "2026-08-24T05:00:00.000Z",
   }));
   const response = {
-    output: [{
-      type: "web_search_call",
-      action: { type: "search", sources: stories.map((story) => ({ type: "url", url: story.url })) },
+    candidates: [{
+      groundingMetadata: {
+        groundingChunks: stories.map((story) => ({ web: { uri: story.url } })),
+      },
     }],
   };
-  const evidence = collectWebSearchSourceUrls(response);
+  const evidence = collectGoogleSearchSourceUrls(response);
   assert.deepEqual(validateStories({ stories }, evidence, now), stories);
   assert.throws(() => validateStories({ stories: stories.map((story, index) => index === 0 ? { ...story, url: "https://fabricated.example/story" } : story) }, evidence, now), /evidence/);
   assert.throws(() => validateStories({ stories: stories.map((story, index) => index === 0 ? { ...story, publishedAt: "2026-08-22T05:00:00.000Z" } : story) }, evidence, now), /24-hour/);

@@ -40,10 +40,10 @@ The daily GitHub Actions workflow runs at 07:30 Europe/London across daylight-sa
 
 Configure these repository secrets before enabling the scheduled publisher:
 
-- `OPENAI_API_KEY` — used only by the GitHub Actions publisher.
+- `GEMINI_API_KEY` — used only by the GitHub Actions publisher.
 - `GITHUB_READ_TOKEN` — optional; the publisher reads public events without it, but a read-only token raises GitHub API limits.
 
-The publisher defaults to `gpt-5.6-luna` and uses the Responses API web-search tool with a strict JSON schema. It accepts only fresh story URLs present in the response's web-search evidence. No API key is shipped to the browser.
+The publisher defaults to `gemini-2.5-flash` and uses Gemini's Google Search grounding. It accepts only fresh story URLs present in the grounding evidence. No API key is shipped to the browser.
 
 The `alex_has_tech` wordmark is set in Linebeam, self-hosted from `public/fonts/`. That font is free for personal, non-commercial use only and its licence asks that `linebeam.txt` stays alongside it — review before using this site commercially.
 
