@@ -1,46 +1,46 @@
 {
-  "generatedAt": "2026-09-07T12:49:49.136Z",
+  "generatedAt": "2026-09-08T11:31:25.119Z",
   "github": {
     "windowHours": 72,
-    "summary": "alexhastech-website: 1 commit",
+    "summary": "alexhastech-website: 2 commits",
     "repositories": [
       {
         "name": "alexhastech-website",
         "url": "https://github.com/abharrison1995-droid/alexhastech-website",
-        "summary": "1 commit"
+        "summary": "2 commits"
       }
     ]
   },
   "stories": [
     {
-      "headline": "Corporate structures complicate accountability for AI data centers.",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/ai/2026/09/the-ai-data-center-boom-is-causing-new-accountability-problems/",
-      "publishedAt": "2026-09-07T11:00:03.000Z"
-    },
-    {
-      "headline": "Two newspapers sue OpenAI and Microsoft for copyright infringement.",
+      "headline": "LG televisions reportedly collect data while on standby",
       "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/990932/seattle-times-newsday-lawsuit-openai-microsoft",
-      "publishedAt": "2026-09-06T23:36:04.000Z"
+      "url": "https://www.theverge.com/tech/991190/lg-tv-spying-standby-recording-wi-fi-scanning-gamers-nexus",
+      "publishedAt": "2026-09-08T11:30:05.000Z"
     },
     {
-      "headline": "Amazon cargo plane crashes at Miami International Airport.",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/990918/amazon-cargo-plane-crashed-miami",
-      "publishedAt": "2026-09-06T20:56:38.000Z"
-    },
-    {
-      "headline": "Authors dispute publisher claims on Anthropic settlement funds.",
+      "headline": "Stoke Space raises one billion dollars for reusable rockets",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/",
-      "publishedAt": "2026-09-06T20:47:37.000Z"
+      "url": "https://techcrunch.com/2026/09/08/stoke-space-raises-another-billion-to-rival-spacex-at-re-flying-rockets/",
+      "publishedAt": "2026-09-08T09:00:00.000Z"
     },
     {
-      "headline": "Europe achieves its first commercial orbital rocket launch.",
+      "headline": "Arm unveils neural rendering technology for mobile gaming graphics",
       "source": "The Verge",
-      "url": "https://www.theverge.com/science/990906/isar-aerospace-europe-orbital-rocket-launch",
-      "publishedAt": "2026-09-06T19:04:22.000Z"
+      "url": "https://www.theverge.com/games/990676/arm-neural-rendering-mali-g2-ultra-xiaomi-xring-o3",
+      "publishedAt": "2026-09-08T02:00:00.000Z"
+    },
+    {
+      "headline": "Audi unveils the A2 E-tron electric vehicle",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/transportation/991081/audi-a2-etron-ev-specs-price",
+      "publishedAt": "2026-09-07T20:03:41.000Z"
+    },
+    {
+      "headline": "Global RAM shortages cause smartphone prices to increase",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/988225/ram-shortage-supply-chain-micron-apple-iphone",
+      "publishedAt": "2026-09-07T12:00:00.000Z"
     }
   ]
 }
