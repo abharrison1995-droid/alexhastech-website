@@ -1,46 +1,66 @@
 {
-  "generatedAt": "2026-09-08T11:31:25.119Z",
+  "generatedAt": "2026-09-09T11:36:21.112Z",
   "github": {
     "windowHours": 72,
-    "summary": "alexhastech-website: 2 commits",
+    "summary": "Olds-Cool-3D-Master: 5 commits, 2 pull request updates · ultimate-networkplus-test-app: 1 commit, 1 branches or tags created · alexhastech-website: 2 commits · brother-chaos: 1 commit · Libre_Core-MacLoader: 1 commit",
     "repositories": [
+      {
+        "name": "Olds-Cool-3D-Master",
+        "url": "https://github.com/abharrison1995-droid/Olds-Cool-3D-Master",
+        "summary": "5 commits, 2 pull request updates"
+      },
+      {
+        "name": "ultimate-networkplus-test-app",
+        "url": "https://github.com/abharrison1995-droid/ultimate-networkplus-test-app",
+        "summary": "1 commit, 1 branches or tags created"
+      },
       {
         "name": "alexhastech-website",
         "url": "https://github.com/abharrison1995-droid/alexhastech-website",
         "summary": "2 commits"
+      },
+      {
+        "name": "brother-chaos",
+        "url": "https://github.com/abharrison1995-droid/brother-chaos",
+        "summary": "1 commit"
+      },
+      {
+        "name": "Libre_Core-MacLoader",
+        "url": "https://github.com/abharrison1995-droid/Libre_Core-MacLoader",
+        "summary": "1 commit"
       }
     ]
   },
   "stories": [
     {
-      "headline": "LG televisions reportedly collect data while on standby",
+      "headline": "Anthropic researchers warn of severe risks from AI",
       "source": "The Verge",
-      "url": "https://www.theverge.com/tech/991190/lg-tv-spying-standby-recording-wi-fi-scanning-gamers-nexus",
-      "publishedAt": "2026-09-08T11:30:05.000Z"
+      "url": "https://www.theverge.com/ai-artificial-intelligence/991927/anthropic-ai-kill-all-humans",
+      "publishedAt": "2026-09-09T09:56:28.000Z"
     },
     {
-      "headline": "Stoke Space raises one billion dollars for reusable rockets",
+      "headline": "DeepMind alumni develop tools to advance grid fusion power",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/08/stoke-space-raises-another-billion-to-rival-spacex-at-re-flying-rockets/",
-      "publishedAt": "2026-09-08T09:00:00.000Z"
+      "url": "https://techcrunch.com/2026/09/08/google-deepmind-alumni-are-building-tools-to-accelerate-fusion-power-for-the-grid/",
+      "publishedAt": "2026-09-09T06:00:00.000Z"
     },
     {
-      "headline": "Arm unveils neural rendering technology for mobile gaming graphics",
+      "headline": "Apple foldable iPhone Duo reported to start at $2,000",
       "source": "The Verge",
-      "url": "https://www.theverge.com/games/990676/arm-neural-rendering-mali-g2-ultra-xiaomi-xring-o3",
-      "publishedAt": "2026-09-08T02:00:00.000Z"
+      "url": "https://www.theverge.com/tech/991884/apple-iphone-duo-rumor-foldable",
+      "publishedAt": "2026-09-09T05:26:53.000Z"
     },
     {
-      "headline": "Audi unveils the A2 E-tron electric vehicle",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/transportation/991081/audi-a2-etron-ev-specs-price",
-      "publishedAt": "2026-09-07T20:03:41.000Z"
+      "headline": "Microsoft issues patch addressing hundreds of security vulnerabilities",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/security/2026/09/microsoft-patches-a-record-972-vulnerabilities-112-of-them-critical/",
+      "publishedAt": "2026-09-08T21:11:46.000Z"
     },
     {
-      "headline": "Global RAM shortages cause smartphone prices to increase",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/988225/ram-shortage-supply-chain-micron-apple-iphone",
-      "publishedAt": "2026-09-07T12:00:00.000Z"
+      "headline": "The Exploration Company raises $450 million",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/08/the-exploration-company-nabs-450-million-to-challenge-spacex/",
+      "publishedAt": "2026-09-08T20:47:34.000Z"
     }
   ]
 }
