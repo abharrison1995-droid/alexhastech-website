@@ -1,23 +1,18 @@
 {
-  "generatedAt": "2026-09-09T11:36:21.112Z",
+  "generatedAt": "2026-09-10T11:33:57.589Z",
   "github": {
     "windowHours": 72,
-    "summary": "Olds-Cool-3D-Master: 5 commits, 2 pull request updates · ultimate-networkplus-test-app: 1 commit, 1 branches or tags created · alexhastech-website: 2 commits · brother-chaos: 1 commit · Libre_Core-MacLoader: 1 commit",
+    "summary": "Olds-Cool-3D-Master: 7 commits, 2 pull request updates · ultimate-networkplus-test-app: 1 commit, 1 branches or tags created · brother-chaos: 1 commit · Libre_Core-MacLoader: 1 commit",
     "repositories": [
       {
         "name": "Olds-Cool-3D-Master",
         "url": "https://github.com/abharrison1995-droid/Olds-Cool-3D-Master",
-        "summary": "5 commits, 2 pull request updates"
+        "summary": "7 commits, 2 pull request updates"
       },
       {
         "name": "ultimate-networkplus-test-app",
         "url": "https://github.com/abharrison1995-droid/ultimate-networkplus-test-app",
         "summary": "1 commit, 1 branches or tags created"
-      },
-      {
-        "name": "alexhastech-website",
-        "url": "https://github.com/abharrison1995-droid/alexhastech-website",
-        "summary": "2 commits"
       },
       {
         "name": "brother-chaos",
@@ -33,34 +28,34 @@
   },
   "stories": [
     {
-      "headline": "Anthropic researchers warn of severe risks from AI",
+      "headline": "Mathematicians ask OpenAI for proof regarding training data",
       "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/991927/anthropic-ai-kill-all-humans",
-      "publishedAt": "2026-09-09T09:56:28.000Z"
+      "url": "https://www.theverge.com/ai-artificial-intelligence/993263/where-does-openai-get-mathematics-training-data",
+      "publishedAt": "2026-09-10T11:00:57.000Z"
     },
     {
-      "headline": "DeepMind alumni develop tools to advance grid fusion power",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/08/google-deepmind-alumni-are-building-tools-to-accelerate-fusion-power-for-the-grid/",
-      "publishedAt": "2026-09-09T06:00:00.000Z"
-    },
-    {
-      "headline": "Apple foldable iPhone Duo reported to start at $2,000",
+      "headline": "Microsoft Xbox picks up Hideo Kojima game Physint",
       "source": "The Verge",
-      "url": "https://www.theverge.com/tech/991884/apple-iphone-duo-rumor-foldable",
-      "publishedAt": "2026-09-09T05:26:53.000Z"
+      "url": "https://www.theverge.com/games/993205/physint-hideo-kojima-sony-playstation-microsoft-xbox",
+      "publishedAt": "2026-09-10T08:22:40.000Z"
     },
     {
-      "headline": "Microsoft issues patch addressing hundreds of security vulnerabilities",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/security/2026/09/microsoft-patches-a-record-972-vulnerabilities-112-of-them-critical/",
-      "publishedAt": "2026-09-08T21:11:46.000Z"
-    },
-    {
-      "headline": "The Exploration Company raises $450 million",
+      "headline": "Listen Labs cancels funding round for Salesforce talks",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/08/the-exploration-company-nabs-450-million-to-challenge-spacex/",
-      "publishedAt": "2026-09-08T20:47:34.000Z"
+      "url": "https://techcrunch.com/2026/09/09/ai-research-startup-listen-labs-scrubbed-a-1-5b-funding-round-for-salesforce-talks/",
+      "publishedAt": "2026-09-10T00:00:37.000Z"
+    },
+    {
+      "headline": "Automattic board places CEO Matt Mullenweg on leave",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/09/automattics-board-forces-ceo-matt-mullenweg-into-leave-of-absence/",
+      "publishedAt": "2026-09-09T23:14:29.000Z"
+    },
+    {
+      "headline": "Massachusetts issues clean energy rules for data centers",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/09/massachusetts-hits-data-centers-with-new-clean-power-rules/",
+      "publishedAt": "2026-09-09T21:43:34.000Z"
     }
   ]
 }
