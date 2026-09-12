@@ -1,61 +1,51 @@
 {
-  "generatedAt": "2026-09-10T11:33:57.589Z",
+  "generatedAt": "2026-09-12T10:59:37.449Z",
   "github": {
     "windowHours": 72,
-    "summary": "Olds-Cool-3D-Master: 7 commits, 2 pull request updates · ultimate-networkplus-test-app: 1 commit, 1 branches or tags created · brother-chaos: 1 commit · Libre_Core-MacLoader: 1 commit",
+    "summary": "Libre_Core-MacLoader: 8 commits, 1 branches or tags created · Olds-Cool-3D-Master: 2 commits",
     "repositories": [
-      {
-        "name": "Olds-Cool-3D-Master",
-        "url": "https://github.com/abharrison1995-droid/Olds-Cool-3D-Master",
-        "summary": "7 commits, 2 pull request updates"
-      },
-      {
-        "name": "ultimate-networkplus-test-app",
-        "url": "https://github.com/abharrison1995-droid/ultimate-networkplus-test-app",
-        "summary": "1 commit, 1 branches or tags created"
-      },
-      {
-        "name": "brother-chaos",
-        "url": "https://github.com/abharrison1995-droid/brother-chaos",
-        "summary": "1 commit"
-      },
       {
         "name": "Libre_Core-MacLoader",
         "url": "https://github.com/abharrison1995-droid/Libre_Core-MacLoader",
-        "summary": "1 commit"
+        "summary": "8 commits, 1 branches or tags created"
+      },
+      {
+        "name": "Olds-Cool-3D-Master",
+        "url": "https://github.com/abharrison1995-droid/Olds-Cool-3D-Master",
+        "summary": "2 commits"
       }
     ]
   },
   "stories": [
     {
-      "headline": "Mathematicians ask OpenAI for proof regarding training data",
+      "headline": "Satellite operators maintain demand for specialized launch services",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/space/2026/09/some-satellite-companies-still-have-an-appetite-for-boutique-launch-services/",
+      "publishedAt": "2026-09-11T23:34:45.000Z"
+    },
+    {
+      "headline": "Mecka AI nears 500 million dollar valuation",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/",
+      "publishedAt": "2026-09-11T22:58:17.000Z"
+    },
+    {
+      "headline": "Lawyer fined for submitting AI hallucinated court testimony",
       "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/993263/where-does-openai-get-mathematics-training-data",
-      "publishedAt": "2026-09-10T11:00:57.000Z"
+      "url": "https://www.theverge.com/ai-artificial-intelligence/994207/chatgpt-new-mexico-lawyer-fined-murder-appeal",
+      "publishedAt": "2026-09-11T20:44:02.000Z"
     },
     {
-      "headline": "Microsoft Xbox picks up Hideo Kojima game Physint",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/games/993205/physint-hideo-kojima-sony-playstation-microsoft-xbox",
-      "publishedAt": "2026-09-10T08:22:40.000Z"
-    },
-    {
-      "headline": "Listen Labs cancels funding round for Salesforce talks",
+      "headline": "Moonshot AI targets two billion dollars in revenue",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/09/ai-research-startup-listen-labs-scrubbed-a-1-5b-funding-round-for-salesforce-talks/",
-      "publishedAt": "2026-09-10T00:00:37.000Z"
+      "url": "https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue/",
+      "publishedAt": "2026-09-11T19:35:54.000Z"
     },
     {
-      "headline": "Automattic board places CEO Matt Mullenweg on leave",
+      "headline": "Roblox expands AI tools and external game playing",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/09/automattics-board-forces-ceo-matt-mullenweg-into-leave-of-absence/",
-      "publishedAt": "2026-09-09T23:14:29.000Z"
-    },
-    {
-      "headline": "Massachusetts issues clean energy rules for data centers",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/09/massachusetts-hits-data-centers-with-new-clean-power-rules/",
-      "publishedAt": "2026-09-09T21:43:34.000Z"
+      "url": "https://techcrunch.com/2026/09/11/roblox-is-making-it-easier-to-build-games-with-ai-and-play-them-outside-roblox/",
+      "publishedAt": "2026-09-11T19:00:00.000Z"
     }
   ]
 }
