@@ -1,51 +1,46 @@
 {
-  "generatedAt": "2026-09-12T10:59:37.449Z",
+  "generatedAt": "2026-09-13T12:09:26.697Z",
   "github": {
     "windowHours": 72,
-    "summary": "Libre_Core-MacLoader: 8 commits, 1 branches or tags created · Olds-Cool-3D-Master: 2 commits",
+    "summary": "Libre_Core-MacLoader: 10 commits, 1 branches or tags created",
     "repositories": [
       {
         "name": "Libre_Core-MacLoader",
         "url": "https://github.com/abharrison1995-droid/Libre_Core-MacLoader",
-        "summary": "8 commits, 1 branches or tags created"
-      },
-      {
-        "name": "Olds-Cool-3D-Master",
-        "url": "https://github.com/abharrison1995-droid/Olds-Cool-3D-Master",
-        "summary": "2 commits"
+        "summary": "10 commits, 1 branches or tags created"
       }
     ]
   },
   "stories": [
     {
-      "headline": "Satellite operators maintain demand for specialized launch services",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/space/2026/09/some-satellite-companies-still-have-an-appetite-for-boutique-launch-services/",
-      "publishedAt": "2026-09-11T23:34:45.000Z"
-    },
-    {
-      "headline": "Mecka AI nears 500 million dollar valuation",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/",
-      "publishedAt": "2026-09-11T22:58:17.000Z"
-    },
-    {
-      "headline": "Lawyer fined for submitting AI hallucinated court testimony",
+      "headline": "Apple Unveils New Hardware Products Including iPhone 18 Pro",
       "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/994207/chatgpt-new-mexico-lawyer-fined-murder-appeal",
-      "publishedAt": "2026-09-11T20:44:02.000Z"
+      "url": "https://www.theverge.com/tech/994218/apple-iphone-18-pro-airpods-5-meta-muse-ai-sony-headphones",
+      "publishedAt": "2026-09-13T12:00:00.000Z"
     },
     {
-      "headline": "Moonshot AI targets two billion dollars in revenue",
+      "headline": "Matt Mullenweg Returns as Automattic CEO After Ouster Attempt",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue/",
-      "publishedAt": "2026-09-11T19:35:54.000Z"
+      "url": "https://techcrunch.com/2026/09/12/automattic-confirms-mullenweg-has-returned-as-ceo-after-attempted-ouster-by-board/",
+      "publishedAt": "2026-09-12T23:25:38.000Z"
     },
     {
-      "headline": "Roblox expands AI tools and external game playing",
+      "headline": "Sam Altman Rejects OpenAI Public Offering for 2026",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/994384/sam-altman-no-openai-ipo-ill-advised",
+      "publishedAt": "2026-09-12T21:16:28.000Z"
+    },
+    {
+      "headline": "Tesla Plans Second-Generation Roadster Unveiling for October 1",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/11/roblox-is-making-it-easier-to-build-games-with-ai-and-play-them-outside-roblox/",
-      "publishedAt": "2026-09-11T19:00:00.000Z"
+      "url": "https://techcrunch.com/2026/09/12/tesla-says-it-will-finally-unveil-the-second-generation-roadster-on-october-1/",
+      "publishedAt": "2026-09-12T19:21:19.000Z"
+    },
+    {
+      "headline": "Revolut Confirms Data Breach Caused by Fake Government Requests",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/12/revolut-confirms-customer-data-breach-through-fake-government-requests/",
+      "publishedAt": "2026-09-12T14:40:00.000Z"
     }
   ]
 }
