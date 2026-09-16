@@ -1,46 +1,46 @@
 {
-  "generatedAt": "2026-09-13T12:09:26.697Z",
+  "generatedAt": "2026-09-16T11:51:54.925Z",
   "github": {
     "windowHours": 72,
-    "summary": "Libre_Core-MacLoader: 10 commits, 1 branches or tags created",
+    "summary": "brother-chaos: 1 commit",
     "repositories": [
       {
-        "name": "Libre_Core-MacLoader",
-        "url": "https://github.com/abharrison1995-droid/Libre_Core-MacLoader",
-        "summary": "10 commits, 1 branches or tags created"
+        "name": "brother-chaos",
+        "url": "https://github.com/abharrison1995-droid/brother-chaos",
+        "summary": "1 commit"
       }
     ]
   },
   "stories": [
     {
-      "headline": "Apple Unveils New Hardware Products Including iPhone 18 Pro",
+      "headline": "Amazon launches Alexa Plus in India with Hindi support",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/16/amazon-launches-alexa-in-india-with-hindi-support/",
+      "publishedAt": "2026-09-16T10:34:47.000Z"
+    },
+    {
+      "headline": "Meta reportedly prepares to launch camera-free smart glasses",
       "source": "The Verge",
-      "url": "https://www.theverge.com/tech/994218/apple-iphone-18-pro-airpods-5-meta-muse-ai-sony-headphones",
-      "publishedAt": "2026-09-13T12:00:00.000Z"
+      "url": "https://www.theverge.com/tech/996138/meta-luna-ray-ban-smart-glasses-camera-free-connect",
+      "publishedAt": "2026-09-16T08:54:46.000Z"
     },
     {
-      "headline": "Matt Mullenweg Returns as Automattic CEO After Ouster Attempt",
+      "headline": "Nvidia CEO opposes government regulation of AI safety",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/12/automattic-confirms-mullenweg-has-returned-as-ceo-after-attempted-ouster-by-board/",
-      "publishedAt": "2026-09-12T23:25:38.000Z"
+      "url": "https://techcrunch.com/2026/09/15/we-dont-need-ai-regulation-leave-safety-to-us-nvidias-jensen-huang-says/",
+      "publishedAt": "2026-09-16T00:20:39.000Z"
     },
     {
-      "headline": "Sam Altman Rejects OpenAI Public Offering for 2026",
+      "headline": "NASA Roman Space Telescope has 22-year fuel supply",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/space/2026/09/the-roman-telescope-has-enough-gas-for-22-years-double-nasas-expectations/",
+      "publishedAt": "2026-09-15T22:26:32.000Z"
+    },
+    {
+      "headline": "Microsoft announces October event for Windows and Surface",
       "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/994384/sam-altman-no-openai-ipo-ill-advised",
-      "publishedAt": "2026-09-12T21:16:28.000Z"
-    },
-    {
-      "headline": "Tesla Plans Second-Generation Roadster Unveiling for October 1",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/12/tesla-says-it-will-finally-unveil-the-second-generation-roadster-on-october-1/",
-      "publishedAt": "2026-09-12T19:21:19.000Z"
-    },
-    {
-      "headline": "Revolut Confirms Data Breach Caused by Fake Government Requests",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/12/revolut-confirms-customer-data-breach-through-fake-government-requests/",
-      "publishedAt": "2026-09-12T14:40:00.000Z"
+      "url": "https://www.theverge.com/news/994714/microsoft-windows-surface-event-october-7-san-francisco",
+      "publishedAt": "2026-09-15T20:36:59.000Z"
     }
   ]
 }
