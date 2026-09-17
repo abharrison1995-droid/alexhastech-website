@@ -1,46 +1,40 @@
 {
-  "generatedAt": "2026-09-16T11:51:54.925Z",
+  "generatedAt": "2026-09-17T11:54:19.511Z",
   "github": {
     "windowHours": 72,
-    "summary": "brother-chaos: 1 commit",
-    "repositories": [
-      {
-        "name": "brother-chaos",
-        "url": "https://github.com/abharrison1995-droid/brother-chaos",
-        "summary": "1 commit"
-      }
-    ]
+    "summary": "No public GitHub activity in the last 72 hours — system idle.",
+    "repositories": []
   },
   "stories": [
     {
-      "headline": "Amazon launches Alexa Plus in India with Hindi support",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/16/amazon-launches-alexa-in-india-with-hindi-support/",
-      "publishedAt": "2026-09-16T10:34:47.000Z"
-    },
-    {
-      "headline": "Meta reportedly prepares to launch camera-free smart glasses",
+      "headline": "AI safety research sector expands rapidly",
       "source": "The Verge",
-      "url": "https://www.theverge.com/tech/996138/meta-luna-ray-ban-smart-glasses-camera-free-connect",
-      "publishedAt": "2026-09-16T08:54:46.000Z"
+      "url": "https://www.theverge.com/ai-artificial-intelligence/996563/ai-safety-research-metr-redwood-openai-anthropic",
+      "publishedAt": "2026-09-17T11:30:00.000Z"
     },
     {
-      "headline": "Nvidia CEO opposes government regulation of AI safety",
+      "headline": "Treble raises 18 million dollars for voice simulation",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/15/we-dont-need-ai-regulation-leave-safety-to-us-nvidias-jensen-huang-says/",
-      "publishedAt": "2026-09-16T00:20:39.000Z"
+      "url": "https://techcrunch.com/2026/09/16/iceland-based-treble-raises-18-million-for-its-voice-simulation-platform/",
+      "publishedAt": "2026-09-17T05:00:00.000Z"
     },
     {
-      "headline": "NASA Roman Space Telescope has 22-year fuel supply",
+      "headline": "Snap unveils new smart glasses for 2,200 dollars",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/16/snap-tries-to-make-the-case-again-for-its-2200-smart-glasses/",
+      "publishedAt": "2026-09-17T00:58:49.000Z"
+    },
+    {
+      "headline": "Apple reportedly builds AI servers with M-series chips",
       "source": "Ars Technica",
-      "url": "https://arstechnica.com/space/2026/09/the-roman-telescope-has-enough-gas-for-22-years-double-nasas-expectations/",
-      "publishedAt": "2026-09-15T22:26:32.000Z"
+      "url": "https://arstechnica.com/ai/2026/09/apple-reportedly-building-server-packed-with-m-series-ultra-chips-for-ai/",
+      "publishedAt": "2026-09-16T22:02:46.000Z"
     },
     {
-      "headline": "Microsoft announces October event for Windows and Surface",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/news/994714/microsoft-windows-surface-event-october-7-san-francisco",
-      "publishedAt": "2026-09-15T20:36:59.000Z"
+      "headline": "Equity management startup Pulley shuts down operations",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/16/pulley-a-carta-rival-is-shutting-down/",
+      "publishedAt": "2026-09-16T21:23:19.000Z"
     }
   ]
 }
