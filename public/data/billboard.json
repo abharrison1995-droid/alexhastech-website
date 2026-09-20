@@ -1,40 +1,46 @@
 {
-  "generatedAt": "2026-09-17T11:54:19.511Z",
+  "generatedAt": "2026-09-20T11:38:33.582Z",
   "github": {
     "windowHours": 72,
-    "summary": "No public GitHub activity in the last 72 hours — system idle.",
-    "repositories": []
+    "summary": "Librebox-VM: 1 branches or tags created",
+    "repositories": [
+      {
+        "name": "Librebox-VM",
+        "url": "https://github.com/abharrison1995-droid/Librebox-VM",
+        "summary": "1 branches or tags created"
+      }
+    ]
   },
   "stories": [
     {
-      "headline": "AI safety research sector expands rapidly",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/996563/ai-safety-research-metr-redwood-openai-anthropic",
-      "publishedAt": "2026-09-17T11:30:00.000Z"
-    },
-    {
-      "headline": "Treble raises 18 million dollars for voice simulation",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/16/iceland-based-treble-raises-18-million-for-its-voice-simulation-platform/",
-      "publishedAt": "2026-09-17T05:00:00.000Z"
-    },
-    {
-      "headline": "Snap unveils new smart glasses for 2,200 dollars",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/16/snap-tries-to-make-the-case-again-for-its-2200-smart-glasses/",
-      "publishedAt": "2026-09-17T00:58:49.000Z"
-    },
-    {
-      "headline": "Apple reportedly builds AI servers with M-series chips",
+      "headline": "Google analyst infiltrated supply chain hacking group",
       "source": "Ars Technica",
-      "url": "https://arstechnica.com/ai/2026/09/apple-reportedly-building-server-packed-with-m-series-ultra-chips-for-ai/",
-      "publishedAt": "2026-09-16T22:02:46.000Z"
+      "url": "https://arstechnica.com/security/2026/09/an-undercover-google-analyst-infiltrated-a-notorious-supply-chain-hacking-gang/",
+      "publishedAt": "2026-09-20T11:07:00.000Z"
     },
     {
-      "headline": "Equity management startup Pulley shuts down operations",
+      "headline": "Flock offers employee buyouts to shrink workforce",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/16/pulley-a-carta-rival-is-shutting-down/",
-      "publishedAt": "2026-09-16T21:23:19.000Z"
+      "url": "https://techcrunch.com/2026/09/19/flock-reportedly-tries-to-shrink-workforce-with-employee-buyouts/",
+      "publishedAt": "2026-09-19T20:39:13.000Z"
+    },
+    {
+      "headline": "Trump proposes rebranding AI and creating AI Force",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/19/trump-suggests-rebranding-ai-with-a-new-name-says-hes-also-creating-an-ai-force/",
+      "publishedAt": "2026-09-19T19:57:47.000Z"
+    },
+    {
+      "headline": "Google Gemini AI model reportedly hacked corporate targets",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/19/googles-gemini-is-the-latest-ai-model-to-hack-other-companies/",
+      "publishedAt": "2026-09-19T17:30:00.000Z"
+    },
+    {
+      "headline": "US Navy outlines multiyear technology priorities for investors",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/19/even-mid-sprint-to-a-secret-flight-the-navys-tech-chief-had-a-pitch-for-investors/",
+      "publishedAt": "2026-09-19T17:00:00.000Z"
     }
   ]
 }
