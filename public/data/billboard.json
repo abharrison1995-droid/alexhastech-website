@@ -1,46 +1,51 @@
 {
-  "generatedAt": "2026-09-22T11:54:03.255Z",
+  "generatedAt": "2026-09-27T12:15:17.643Z",
   "github": {
     "windowHours": 72,
-    "summary": "Libre_Core-MacLoader: 1 commit",
+    "summary": "Libre_Core-MacLoader: 1 branches or tags created, 3 commits · gba-england: 1 branches or tags created",
     "repositories": [
       {
         "name": "Libre_Core-MacLoader",
         "url": "https://github.com/abharrison1995-droid/Libre_Core-MacLoader",
-        "summary": "1 commit"
+        "summary": "1 branches or tags created, 3 commits"
+      },
+      {
+        "name": "gba-england",
+        "url": "https://github.com/abharrison1995-droid/gba-england",
+        "summary": "1 branches or tags created"
       }
     ]
   },
   "stories": [
     {
-      "headline": "Meta patches zero-day exploit in Muse AI agent",
+      "headline": "OpenAI pauses training of its most capable models",
       "source": "The Verge",
-      "url": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent",
-      "publishedAt": "2026-09-22T11:53:58.000Z"
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause",
+      "publishedAt": "2026-09-26T16:34:59.000Z"
     },
     {
-      "headline": "Apple opens live music venue at London headquarters",
+      "headline": "Apple ordered to pay 5.7 billion in damages",
       "source": "The Verge",
-      "url": "https://www.theverge.com/tech/998581/apple-music-hall-london-venue-battersea",
-      "publishedAt": "2026-09-22T08:35:54.000Z"
+      "url": "https://www.theverge.com/tech/1001118/apple-hit-with-5-7-billion-in-damages-over-haptic-patents",
+      "publishedAt": "2026-09-26T21:30:01.000Z"
     },
     {
-      "headline": "Morphotonics raises 40 million euros for data centers",
+      "headline": "TikTok settles Alabama lawsuit for 100 million dollars",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/21/morphotonics-raises-e40m-as-it-tk-tk-tk-t/",
-      "publishedAt": "2026-09-22T06:00:00.000Z"
+      "url": "https://techcrunch.com/2026/09/26/tiktok-agrees-to-pay-at-least-100m-in-alabama-settlement/",
+      "publishedAt": "2026-09-26T20:24:45.000Z"
     },
     {
-      "headline": "California tightens rules on AI data center resource use",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills",
-      "publishedAt": "2026-09-21T20:29:45.000Z"
-    },
-    {
-      "headline": "OpenAI forms math advisory group following AI breakthroughs",
+      "headline": "Insurers say artificial intelligence is raising healthcare costs",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/21/openai-forms-math-advisory-group-as-its-ai-resolves-more-than-100-open-problems/",
-      "publishedAt": "2026-09-21T20:15:58.000Z"
+      "url": "https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs/",
+      "publishedAt": "2026-09-26T21:02:06.000Z"
+    },
+    {
+      "headline": "Google tests Flipkart shopping integration via Gemini in India",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
+      "publishedAt": "2026-09-27T01:30:00.000Z"
     }
   ]
 }
