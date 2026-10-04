@@ -1,51 +1,51 @@
 {
-  "generatedAt": "2026-09-27T12:15:17.643Z",
+  "generatedAt": "2026-10-04T12:36:41.556Z",
   "github": {
     "windowHours": 72,
-    "summary": "Libre_Core-MacLoader: 1 branches or tags created, 3 commits · gba-england: 1 branches or tags created",
+    "summary": "Libre_Core-MacLoader: 17 commits, 1 branches or tags created, 1 pull request update · Olds-Cool-3D-Master: 1 commit",
     "repositories": [
       {
         "name": "Libre_Core-MacLoader",
         "url": "https://github.com/abharrison1995-droid/Libre_Core-MacLoader",
-        "summary": "1 branches or tags created, 3 commits"
+        "summary": "17 commits, 1 branches or tags created, 1 pull request update"
       },
       {
-        "name": "gba-england",
-        "url": "https://github.com/abharrison1995-droid/gba-england",
-        "summary": "1 branches or tags created"
+        "name": "Olds-Cool-3D-Master",
+        "url": "https://github.com/abharrison1995-droid/Olds-Cool-3D-Master",
+        "summary": "1 commit"
       }
     ]
   },
   "stories": [
     {
-      "headline": "OpenAI pauses training of its most capable models",
+      "headline": "Federal judge calls Flock technology indiscriminate mass surveillance",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/03/federal-judge-calls-flock-indiscriminate-mass-surveillance/",
+      "publishedAt": "2026-10-03T19:33:15.000Z"
+    },
+    {
+      "headline": "Amazon ends NDA use amid data center backlash",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/03/amazon-responds-to-data-center-backlash-says-it-no-longer-uses-ndas/",
+      "publishedAt": "2026-10-03T18:43:57.000Z"
+    },
+    {
+      "headline": "Capcom prepares to develop video games using AI",
       "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause",
-      "publishedAt": "2026-09-26T16:34:59.000Z"
+      "url": "https://www.theverge.com/games/1004418/capcom-ai-game-development",
+      "publishedAt": "2026-10-03T16:49:10.000Z"
     },
     {
-      "headline": "Apple ordered to pay 5.7 billion in damages",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/1001118/apple-hit-with-5-7-billion-in-damages-over-haptic-patents",
-      "publishedAt": "2026-09-26T21:30:01.000Z"
-    },
-    {
-      "headline": "TikTok settles Alabama lawsuit for 100 million dollars",
+      "headline": "OpenAI safety employee resigns over corporate culture",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/26/tiktok-agrees-to-pay-at-least-100m-in-alabama-settlement/",
-      "publishedAt": "2026-09-26T20:24:45.000Z"
+      "url": "https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/",
+      "publishedAt": "2026-10-03T16:30:01.000Z"
     },
     {
-      "headline": "Insurers say artificial intelligence is raising healthcare costs",
+      "headline": "India orders removal of Bitchat from app stores",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs/",
-      "publishedAt": "2026-09-26T21:02:06.000Z"
-    },
-    {
-      "headline": "Google tests Flipkart shopping integration via Gemini in India",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
-      "publishedAt": "2026-09-27T01:30:00.000Z"
+      "url": "https://techcrunch.com/2026/10/03/jack-dorseys-bitchat-disappears-from-app-stores-in-india-after-government-order/",
+      "publishedAt": "2026-10-03T15:02:01.000Z"
     }
   ]
 }
