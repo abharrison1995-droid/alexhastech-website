@@ -1,51 +1,40 @@
 {
-  "generatedAt": "2026-10-04T12:36:41.556Z",
+  "generatedAt": "2026-10-11T13:10:02.309Z",
   "github": {
     "windowHours": 72,
-    "summary": "Libre_Core-MacLoader: 17 commits, 1 branches or tags created, 1 pull request update · Olds-Cool-3D-Master: 1 commit",
-    "repositories": [
-      {
-        "name": "Libre_Core-MacLoader",
-        "url": "https://github.com/abharrison1995-droid/Libre_Core-MacLoader",
-        "summary": "17 commits, 1 branches or tags created, 1 pull request update"
-      },
-      {
-        "name": "Olds-Cool-3D-Master",
-        "url": "https://github.com/abharrison1995-droid/Olds-Cool-3D-Master",
-        "summary": "1 commit"
-      }
-    ]
+    "summary": "No public GitHub activity in the last 72 hours — system idle.",
+    "repositories": []
   },
   "stories": [
     {
-      "headline": "Federal judge calls Flock technology indiscriminate mass surveillance",
+      "headline": "Microsoft CEO calls for emergency brakes on AI models",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/03/federal-judge-calls-flock-indiscriminate-mass-surveillance/",
-      "publishedAt": "2026-10-03T19:33:15.000Z"
+      "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+      "publishedAt": "2026-10-10T21:47:51.000Z"
     },
     {
-      "headline": "Amazon ends NDA use amid data center backlash",
+      "headline": "Apple licenses tech from podcast startup Huxe",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/03/amazon-responds-to-data-center-backlash-says-it-no-longer-uses-ndas/",
-      "publishedAt": "2026-10-03T18:43:57.000Z"
+      "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+      "publishedAt": "2026-10-10T19:50:00.000Z"
     },
     {
-      "headline": "Capcom prepares to develop video games using AI",
+      "headline": "Ledger hardware wallet tampering suspected following crypto thefts",
       "source": "The Verge",
-      "url": "https://www.theverge.com/games/1004418/capcom-ai-game-development",
-      "publishedAt": "2026-10-03T16:49:10.000Z"
+      "url": "https://www.theverge.com/tech/1009294/ledger-wallet-tampering-suspected-after-reports-of-crypto-thefts",
+      "publishedAt": "2026-10-10T16:36:44.000Z"
     },
     {
-      "headline": "OpenAI safety employee resigns over corporate culture",
+      "headline": "Cloudflare acquires Deno to enhance Workers programming model",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/",
-      "publishedAt": "2026-10-03T16:30:01.000Z"
+      "url": "https://techcrunch.com/2026/10/10/cloudflare-acquires-deno-to-improve-its-workers-programming-model/",
+      "publishedAt": "2026-10-10T16:25:42.000Z"
     },
     {
-      "headline": "India orders removal of Bitchat from app stores",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/03/jack-dorseys-bitchat-disappears-from-app-stores-in-india-after-government-order/",
-      "publishedAt": "2026-10-03T15:02:01.000Z"
+      "headline": "Anthropic disconnects internal AI evaluations from the internet",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+      "publishedAt": "2026-10-10T14:41:16.000Z"
     }
   ]
 }
