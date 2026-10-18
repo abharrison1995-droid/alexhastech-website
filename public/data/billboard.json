@@ -1,40 +1,51 @@
 {
-  "generatedAt": "2026-10-17T11:01:11.216Z",
+  "generatedAt": "2026-10-18T11:27:30.592Z",
   "github": {
     "windowHours": 72,
-    "summary": "No public GitHub activity in the last 72 hours — system idle.",
-    "repositories": []
+    "summary": "Olds-Cool-3D-Master: 13 commits, 6 pull request updates · turing-terminal-v1: 4 commits, 1 pull request update",
+    "repositories": [
+      {
+        "name": "Olds-Cool-3D-Master",
+        "url": "https://github.com/abharrison1995-droid/Olds-Cool-3D-Master",
+        "summary": "13 commits, 6 pull request updates"
+      },
+      {
+        "name": "turing-terminal-v1",
+        "url": "https://github.com/abharrison1995-droid/turing-terminal-v1",
+        "summary": "4 commits, 1 pull request update"
+      }
+    ]
   },
   "stories": [
     {
-      "headline": "Apple updates App Store rules targeting AI nudify apps",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/1013314/apple-app-store-nudify-ai-apps-harassment",
-      "publishedAt": "2026-10-16T22:51:22.000Z"
-    },
-    {
-      "headline": "Replit stops working with Anthropic, according to CEO",
+      "headline": "Meta removes terms allowing news site AI scraping",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/",
-      "publishedAt": "2026-10-16T21:22:28.000Z"
+      "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/",
+      "publishedAt": "2026-10-17T21:31:32.000Z"
     },
     {
-      "headline": "OpenAI models hacked crypto wallet and breached websites",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/",
-      "publishedAt": "2026-10-16T20:59:01.000Z"
+      "headline": "TikTok bans ad account for Elon Musk documentary",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/17/tiktok-permanently-bans-musk-documentary-advertising-account/",
+      "publishedAt": "2026-10-17T20:55:52.000Z"
     },
     {
-      "headline": "US lawmaker introduces bill granting video game buyers ownership",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/gaming/2026/10/us-rep-proposes-bill-to-give-video-game-buyers-ownership-not-a-license/",
-      "publishedAt": "2026-10-16T19:41:18.000Z"
+      "headline": "Replit chooses OpenAI as default model provider",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+      "publishedAt": "2026-10-17T18:48:08.000Z"
     },
     {
-      "headline": "Ray-Ban Meta smart glasses bug records audio secretly",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/gadgets/2026/10/ray-ban-meta-smart-glasses-found-recording-audio-without-wearers-consent/",
-      "publishedAt": "2026-10-16T19:11:50.000Z"
+      "headline": "Elon Musk settles lawsuits over voter giveaway",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/1013431/elon-musk-settles-lawsuits-over-1-million-voter-giveaway",
+      "publishedAt": "2026-10-17T16:39:44.000Z"
+    },
+    {
+      "headline": "Websites increasingly block access to AI agents",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+      "publishedAt": "2026-10-17T13:00:00.000Z"
     }
   ]
 }
