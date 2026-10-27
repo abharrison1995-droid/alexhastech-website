@@ -1,61 +1,66 @@
 {
-  "generatedAt": "2026-10-26T13:22:16.623Z",
+  "generatedAt": "2026-10-27T12:29:57.954Z",
   "github": {
     "windowHours": 72,
-    "summary": "Olds-Cool-3D-Master: 5 commits, 1 branches or tags created, 2 pull request updates · turing-terminal-v1: 3 commits, 3 pull request updates, 2 branches or tags created · opencode-go-mod: 5 commits · Libre_Core-AutoLoader: 2 pull request u…",
+    "summary": "turing-terminal-v1: 7 commits, 3 branches or tags created, 3 pull request updates · Olds-Cool-3D-Master: 5 commits, 1 branches or tags created, 2 pull request updates · opencode-go-mod: 4 commits · Libre_Core-AutoLoader: 1 commit, 1 bran…",
     "repositories": [
+      {
+        "name": "turing-terminal-v1",
+        "url": "https://github.com/abharrison1995-droid/turing-terminal-v1",
+        "summary": "7 commits, 3 branches or tags created, 3 pull request updates"
+      },
       {
         "name": "Olds-Cool-3D-Master",
         "url": "https://github.com/abharrison1995-droid/Olds-Cool-3D-Master",
         "summary": "5 commits, 1 branches or tags created, 2 pull request updates"
       },
       {
-        "name": "turing-terminal-v1",
-        "url": "https://github.com/abharrison1995-droid/turing-terminal-v1",
-        "summary": "3 commits, 3 pull request updates, 2 branches or tags created"
-      },
-      {
         "name": "opencode-go-mod",
         "url": "https://github.com/abharrison1995-droid/opencode-go-mod",
-        "summary": "5 commits"
+        "summary": "4 commits"
       },
       {
         "name": "Libre_Core-AutoLoader",
         "url": "https://github.com/abharrison1995-droid/Libre_Core-AutoLoader",
-        "summary": "2 pull request updates"
+        "summary": "1 commit, 1 branches or tags created, 2 pull request updates"
+      },
+      {
+        "name": "pif-android",
+        "url": "https://github.com/abharrison1995-droid/pif-android",
+        "summary": "1 commit"
       }
     ]
   },
   "stories": [
     {
-      "headline": "Tech companies explore AI to modernize legacy COBOL code",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1018434/cobol-migration-legacy-code-openai-anthropic",
-      "publishedAt": "2026-10-26T13:15:00.000Z"
-    },
-    {
-      "headline": "Apple announces iPad Mini featuring larger OLED display",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/1017801/ipad-mini-oled-display-apple-announce",
-      "publishedAt": "2026-10-26T13:05:03.000Z"
-    },
-    {
-      "headline": "Tesla partners with Turo to expand Full Self-Driving",
+      "headline": "Nvidia invests in Indian startup optimizing GPU usage",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/26/tesla-turns-to-turo-to-boost-adoption-of-full-self-driving-supervised/",
-      "publishedAt": "2026-10-26T12:58:40.000Z"
+      "url": "https://techcrunch.com/2026/10/27/nvidia-backs-indian-startup-helping-companies-run-ai-models-with-fewer-gpus/",
+      "publishedAt": "2026-10-27T11:00:00.000Z"
     },
     {
-      "headline": "West Virginia city challenges automated license plate reader surveillance",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/features/1017836/flock-huntington-west-virginia-surveillance-ballot-measure",
-      "publishedAt": "2026-10-26T10:00:00.000Z"
-    },
-    {
-      "headline": "Economist says AI delivers no payoff for most companies",
+      "headline": "Cohere says Alibaba AI model attempted data transfer",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
-      "publishedAt": "2026-10-25T16:57:32.000Z"
+      "url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/",
+      "publishedAt": "2026-10-27T01:12:21.000Z"
+    },
+    {
+      "headline": "OpenAI announces scientific discoveries and academic partnerships",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
+      "publishedAt": "2026-10-26T23:34:58.000Z"
+    },
+    {
+      "headline": "Microsoft offers voluntary buyouts to 60,000 employees",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/gadgets/2026/10/microsoft-offers-voluntary-buyouts-to-60000-employees/",
+      "publishedAt": "2026-10-26T22:36:06.000Z"
+    },
+    {
+      "headline": "Instagram expands video duration limits to 90 minutes",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/26/watch-out-youtube-instagram-goes-from-short-form-to-90-minute-videos/",
+      "publishedAt": "2026-10-26T21:05:11.000Z"
     }
   ]
 }
