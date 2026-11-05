@@ -1,46 +1,40 @@
 {
-  "generatedAt": "2026-11-01T13:39:47.671Z",
+  "generatedAt": "2026-11-05T14:49:51.633Z",
   "github": {
     "windowHours": 72,
-    "summary": "opencode-go-mod: 5 pull request updates",
-    "repositories": [
-      {
-        "name": "opencode-go-mod",
-        "url": "https://github.com/abharrison1995-droid/opencode-go-mod",
-        "summary": "5 pull request updates"
-      }
-    ]
+    "summary": "No public GitHub activity in the last 72 hours — system idle.",
+    "repositories": []
   },
   "stories": [
     {
-      "headline": "California Prop 45 may include data center energy loopholes",
+      "headline": "NASA introduces the X-70 experimental aircraft design",
       "source": "The Verge",
-      "url": "https://www.theverge.com/policy/1023877/prop-45-california-data-centers-energy",
-      "publishedAt": "2026-11-01T13:00:00.000Z"
+      "url": "https://www.theverge.com/tech/1027426/nasa-experimental-x-70-fractal-aircraft",
+      "publishedAt": "2026-11-05T14:10:12.000Z"
     },
     {
-      "headline": "Apple CEO states company will not rush AI deployment",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
-      "publishedAt": "2026-10-31T21:41:00.000Z"
-    },
-    {
-      "headline": "Judge permits NAACP pollution lawsuit against xAI to proceed",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
-      "publishedAt": "2026-10-31T21:17:03.000Z"
-    },
-    {
-      "headline": "Binance CEO claims 90 percent of stolen crypto replenished",
+      "headline": "Democratic congressional leadership prepares new tech policy initiatives",
       "source": "The Verge",
-      "url": "https://www.theverge.com/tech/1024091/binance-ceo-90-percent-stolen-crypto",
-      "publishedAt": "2026-10-31T18:40:32.000Z"
+      "url": "https://www.theverge.com/policy/1027430/democratic-control-congress-tech-policy",
+      "publishedAt": "2026-11-05T14:11:27.000Z"
     },
     {
-      "headline": "OpenAI reportedly lowers target for its latest funding round",
+      "headline": "Box integrates Nvidia Nemotron for AI content retrieval",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
-      "publishedAt": "2026-10-31T16:12:55.000Z"
+      "url": "https://techcrunch.com/2026/11/05/box-taps-nvidias-nemotron-for-new-agent-first-content-retrieval-system/",
+      "publishedAt": "2026-11-05T14:00:00.000Z"
+    },
+    {
+      "headline": "United Airlines partners with Spotify and Starlink for inflight-entertainment",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/transportation/1026472/united-seatback-spotify-app-starlink-wifi",
+      "publishedAt": "2026-11-05T13:00:00.000Z"
+    },
+    {
+      "headline": "Agility Robotics completes stock market debut on Nasdaq",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/",
+      "publishedAt": "2026-11-05T12:00:41.000Z"
     }
   ]
 }
