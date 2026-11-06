@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T14:49:51.633Z",
+  "generatedAt": "2026-11-06T14:27:27.957Z",
   "github": {
     "windowHours": 72,
     "summary": "No public GitHub activity in the last 72 hours — system idle.",
@@ -7,34 +7,34 @@
   },
   "stories": [
     {
-      "headline": "NASA introduces the X-70 experimental aircraft design",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/1027426/nasa-experimental-x-70-fractal-aircraft",
-      "publishedAt": "2026-11-05T14:10:12.000Z"
-    },
-    {
-      "headline": "Democratic congressional leadership prepares new tech policy initiatives",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/policy/1027430/democratic-control-congress-tech-policy",
-      "publishedAt": "2026-11-05T14:11:27.000Z"
-    },
-    {
-      "headline": "Box integrates Nvidia Nemotron for AI content retrieval",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/05/box-taps-nvidias-nemotron-for-new-agent-first-content-retrieval-system/",
-      "publishedAt": "2026-11-05T14:00:00.000Z"
-    },
-    {
-      "headline": "United Airlines partners with Spotify and Starlink for inflight-entertainment",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/transportation/1026472/united-seatback-spotify-app-starlink-wifi",
-      "publishedAt": "2026-11-05T13:00:00.000Z"
-    },
-    {
-      "headline": "Agility Robotics completes stock market debut on Nasdaq",
+      "headline": "Congress summons Nvidia CEO over Chinese espionage concerns.",
       "source": "Ars Technica",
-      "url": "https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/",
-      "publishedAt": "2026-11-05T12:00:41.000Z"
+      "url": "https://arstechnica.com/tech-policy/2026/11/nvidia-ceo-jensen-huang-summoned-by-congress-over-chinese-espionage-concerns/",
+      "publishedAt": "2026-11-06T14:13:32.000Z"
+    },
+    {
+      "headline": "EU demands changes to TikTok recommendation algorithm.",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/1028597/tiktok-eu-for-you-algorithm-rabbit-hole-effect",
+      "publishedAt": "2026-11-06T14:00:49.000Z"
+    },
+    {
+      "headline": "Amazon adds texting feature for Alexa shopping lists.",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/1028587/amazon-alexa-shopping-ai-text-orders",
+      "publishedAt": "2026-11-06T14:00:00.000Z"
+    },
+    {
+      "headline": "Protesters enter Microsoft data center site in Amsterdam.",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam",
+      "publishedAt": "2026-11-06T11:55:19.000Z"
+    },
+    {
+      "headline": "Tesla will end Cybertruck production in 2027.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/06/tesla-will-stop-making-the-cybertruck-in-2027/",
+      "publishedAt": "2026-11-06T11:50:10.000Z"
     }
   ]
 }
