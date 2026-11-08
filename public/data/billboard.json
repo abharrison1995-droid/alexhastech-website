@@ -1,40 +1,46 @@
 {
-  "generatedAt": "2026-11-06T14:27:27.957Z",
+  "generatedAt": "2026-11-08T13:41:57.173Z",
   "github": {
     "windowHours": 72,
-    "summary": "No public GitHub activity in the last 72 hours — system idle.",
-    "repositories": []
+    "summary": "opencode-go-mod: 1 commit",
+    "repositories": [
+      {
+        "name": "opencode-go-mod",
+        "url": "https://github.com/abharrison1995-droid/opencode-go-mod",
+        "summary": "1 commit"
+      }
+    ]
   },
   "stories": [
     {
-      "headline": "Congress summons Nvidia CEO over Chinese espionage concerns.",
+      "headline": "Physicists analyze electrical noise to solve superconductor mystery",
       "source": "Ars Technica",
-      "url": "https://arstechnica.com/tech-policy/2026/11/nvidia-ceo-jensen-huang-summoned-by-congress-over-chinese-espionage-concerns/",
-      "publishedAt": "2026-11-06T14:13:32.000Z"
+      "url": "https://arstechnica.com/science/2026/11/physicists-listened-to-electrical-noise-to-crack-a-superconductor-mystery/",
+      "publishedAt": "2026-11-08T12:15:31.000Z"
     },
     {
-      "headline": "EU demands changes to TikTok recommendation algorithm.",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/1028597/tiktok-eu-for-you-algorithm-rabbit-hole-effect",
-      "publishedAt": "2026-11-06T14:00:49.000Z"
-    },
-    {
-      "headline": "Amazon adds texting feature for Alexa shopping lists.",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/1028587/amazon-alexa-shopping-ai-text-orders",
-      "publishedAt": "2026-11-06T14:00:00.000Z"
-    },
-    {
-      "headline": "Protesters enter Microsoft data center site in Amsterdam.",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam",
-      "publishedAt": "2026-11-06T11:55:19.000Z"
-    },
-    {
-      "headline": "Tesla will end Cybertruck production in 2027.",
+      "headline": "US midterm elections impact data center developments and expansion",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/06/tesla-will-stop-making-the-cybertruck-in-2027/",
-      "publishedAt": "2026-11-06T11:50:10.000Z"
+      "url": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/",
+      "publishedAt": "2026-11-07T22:07:22.000Z"
+    },
+    {
+      "headline": "Executive reportedly recruited to spy on Nvidia chief executive",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
+      "publishedAt": "2026-11-07T21:17:08.000Z"
+    },
+    {
+      "headline": "Binance chief financial officer resigns after major hack",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/07/binance-cfo-is-leaving-to-pursue-a-new-venture-after-6-3-billion-hack/",
+      "publishedAt": "2026-11-07T17:24:07.000Z"
+    },
+    {
+      "headline": "US permitted Nvidia chip sales to Chinese shell company",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
+      "publishedAt": "2026-11-07T15:43:45.000Z"
     }
   ]
 }
