@@ -1,46 +1,40 @@
 {
-  "generatedAt": "2026-11-08T13:41:57.173Z",
+  "generatedAt": "2026-11-11T14:35:59.451Z",
   "github": {
     "windowHours": 72,
-    "summary": "opencode-go-mod: 1 commit",
-    "repositories": [
-      {
-        "name": "opencode-go-mod",
-        "url": "https://github.com/abharrison1995-droid/opencode-go-mod",
-        "summary": "1 commit"
-      }
-    ]
+    "summary": "No public GitHub activity in the last 72 hours — system idle.",
+    "repositories": []
   },
   "stories": [
     {
-      "headline": "Physicists analyze electrical noise to solve superconductor mystery",
+      "headline": "Google DeepMind mathematically verifies key Signal encryption code",
       "source": "Ars Technica",
-      "url": "https://arstechnica.com/science/2026/11/physicists-listened-to-electrical-noise-to-crack-a-superconductor-mystery/",
-      "publishedAt": "2026-11-08T12:15:31.000Z"
+      "url": "https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/",
+      "publishedAt": "2026-11-11T14:08:57.000Z"
     },
     {
-      "headline": "US midterm elections impact data center developments and expansion",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/",
-      "publishedAt": "2026-11-07T22:07:22.000Z"
-    },
-    {
-      "headline": "Executive reportedly recruited to spy on Nvidia chief executive",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
-      "publishedAt": "2026-11-07T21:17:08.000Z"
-    },
-    {
-      "headline": "Binance chief financial officer resigns after major hack",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/07/binance-cfo-is-leaving-to-pursue-a-new-venture-after-6-3-billion-hack/",
-      "publishedAt": "2026-11-07T17:24:07.000Z"
-    },
-    {
-      "headline": "US permitted Nvidia chip sales to Chinese shell company",
+      "headline": "Serve Robotics launches API for sidewalk delivery robots",
       "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
-      "publishedAt": "2026-11-07T15:43:45.000Z"
+      "url": "https://www.theverge.com/transportation/1030902/serve-robotics-open-developer-api-sidewalk-delivery",
+      "publishedAt": "2026-11-11T12:30:00.000Z"
+    },
+    {
+      "headline": "Apple to shut down its Support Community forum",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/1031507/apple-community-support-forum-shutting-down",
+      "publishedAt": "2026-11-11T12:19:10.000Z"
+    },
+    {
+      "headline": "Microsoft releases Auto SR upscaling for Xbox Ally X",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/1031446/microsoft-automatic-super-resolution-auto-sr-upscaling",
+      "publishedAt": "2026-11-11T00:34:24.000Z"
+    },
+    {
+      "headline": "Amazon debuts AI-powered Ring security drone and robot",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/11/ring-cameras-go-mobile-as-amazon-debuts-ai-powered-security-drone-and-robot/",
+      "publishedAt": "2026-11-10T22:35:01.000Z"
     }
   ]
 }
