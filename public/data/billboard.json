@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T14:35:59.451Z",
+  "generatedAt": "2026-11-12T15:27:57.266Z",
   "github": {
     "windowHours": 72,
     "summary": "No public GitHub activity in the last 72 hours — system idle.",
@@ -7,34 +7,34 @@
   },
   "stories": [
     {
-      "headline": "Google DeepMind mathematically verifies key Signal encryption code",
+      "headline": "Norwest launches $4 billion fund focused on AI",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/12/norwest-pushes-deeper-into-ai-with-new-4b-fund/",
+      "publishedAt": "2026-11-12T15:18:14.000Z"
+    },
+    {
+      "headline": "Fireworks AI breach exposes Notion customer chat transcripts",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/",
+      "publishedAt": "2026-11-12T15:02:28.000Z"
+    },
+    {
+      "headline": "Google launches Gemini-powered smartglasses starting at $395",
       "source": "Ars Technica",
-      "url": "https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/",
-      "publishedAt": "2026-11-11T14:08:57.000Z"
+      "url": "https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/",
+      "publishedAt": "2026-11-12T14:50:17.000Z"
     },
     {
-      "headline": "Serve Robotics launches API for sidewalk delivery robots",
+      "headline": "Lego BrickLink marketplace remains offline after unusual activity",
       "source": "The Verge",
-      "url": "https://www.theverge.com/transportation/1030902/serve-robotics-open-developer-api-sidewalk-delivery",
-      "publishedAt": "2026-11-11T12:30:00.000Z"
+      "url": "https://www.theverge.com/tech/1031889/lego-bricklink-marketplace-offline-unusual-activity",
+      "publishedAt": "2026-11-12T14:13:58.000Z"
     },
     {
-      "headline": "Apple to shut down its Support Community forum",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/1031507/apple-community-support-forum-shutting-down",
-      "publishedAt": "2026-11-11T12:19:10.000Z"
-    },
-    {
-      "headline": "Microsoft releases Auto SR upscaling for Xbox Ally X",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/1031446/microsoft-automatic-super-resolution-auto-sr-upscaling",
-      "publishedAt": "2026-11-11T00:34:24.000Z"
-    },
-    {
-      "headline": "Amazon debuts AI-powered Ring security drone and robot",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/ai/2026/11/ring-cameras-go-mobile-as-amazon-debuts-ai-powered-security-drone-and-robot/",
-      "publishedAt": "2026-11-10T22:35:01.000Z"
+      "headline": "Nvidia CEO Jensen Huang resigns; interim chief appointed",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/12/nvidias-jensen-huang-resigns-chipmaker-names-cfo-colette-kress-as-interim-ceo/",
+      "publishedAt": "2026-11-12T14:10:34.000Z"
     }
   ]
 }
